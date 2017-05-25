@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		03E8FEB72713B530D681F286 /* libPods-Country-Trip.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8951AE78EEE802BCB2346EAA /* libPods-Country-Trip.a */; };
+		3B6E2417182940523AF6F52A /* libPods-Country-TripUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 73BFD5D2C9FE70E3D366C834 /* libPods-Country-TripUITests.a */; };
 		4157BD1E1ED730D400443434 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4157BD1D1ED730D400443434 /* main.m */; };
 		4157BD211ED730D400443434 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4157BD201ED730D400443434 /* AppDelegate.m */; };
 		4157BD241ED730D400443434 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4157BD231ED730D400443434 /* ViewController.m */; };
@@ -16,6 +18,8 @@
 		4157BD2F1ED730D400443434 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4157BD2D1ED730D400443434 /* LaunchScreen.storyboard */; };
 		4157BD3A1ED730D500443434 /* Country_TripTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4157BD391ED730D500443434 /* Country_TripTests.m */; };
 		4157BD451ED730D500443434 /* Country_TripUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4157BD441ED730D500443434 /* Country_TripUITests.m */; };
+		4157BD541ED736BC00443434 /* CountryService.m in Sources */ = {isa = PBXBuildFile; fileRef = 4157BD531ED736BC00443434 /* CountryService.m */; };
+		C49A0358D3C88BC5C00B5B03 /* libPods-Country-TripTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AFF25CEC7F0C38E2566B653 /* libPods-Country-TripTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +40,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		044FDB31BABBC890AA713FB6 /* Pods-Country-Trip.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Country-Trip.release.xcconfig"; path = "Pods/Target Support Files/Pods-Country-Trip/Pods-Country-Trip.release.xcconfig"; sourceTree = "<group>"; };
+		3AFF25CEC7F0C38E2566B653 /* libPods-Country-TripTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Country-TripTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3DCEC7623F56211797ABB6C2 /* Pods-Country-TripTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Country-TripTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Country-TripTests/Pods-Country-TripTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4157BD191ED730D400443434 /* Country-Trip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Country-Trip.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4157BD1D1ED730D400443434 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4157BD1F1ED730D400443434 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -53,6 +60,14 @@
 		4157BD401ED730D500443434 /* Country-TripUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Country-TripUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4157BD441ED730D500443434 /* Country_TripUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Country_TripUITests.m; sourceTree = "<group>"; };
 		4157BD461ED730D500443434 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4157BD521ED736BC00443434 /* CountryService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountryService.h; sourceTree = "<group>"; };
+		4157BD531ED736BC00443434 /* CountryService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountryService.m; sourceTree = "<group>"; };
+		73BFD5D2C9FE70E3D366C834 /* libPods-Country-TripUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Country-TripUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		74EC798397613B547FFCEF1E /* Pods-Country-TripTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Country-TripTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Country-TripTests/Pods-Country-TripTests.release.xcconfig"; sourceTree = "<group>"; };
+		8951AE78EEE802BCB2346EAA /* libPods-Country-Trip.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Country-Trip.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9FAB6650BCE1CC3179F806EA /* Pods-Country-Trip.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Country-Trip.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Country-Trip/Pods-Country-Trip.debug.xcconfig"; sourceTree = "<group>"; };
+		B2D3D69FA9F91E60F910A2ED /* Pods-Country-TripUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Country-TripUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Country-TripUITests/Pods-Country-TripUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		E816889C118F29649833F49A /* Pods-Country-TripUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Country-TripUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Country-TripUITests/Pods-Country-TripUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03E8FEB72713B530D681F286 /* libPods-Country-Trip.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,6 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C49A0358D3C88BC5C00B5B03 /* libPods-Country-TripTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B6E2417182940523AF6F52A /* libPods-Country-TripUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,6 +105,8 @@
 				4157BD381ED730D500443434 /* Country-TripTests */,
 				4157BD431ED730D500443434 /* Country-TripUITests */,
 				4157BD1A1ED730D400443434 /* Products */,
+				EC43582F0E0D47F81F1FB439 /* Pods */,
+				F478F9C842B37877BB3600F2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -103,6 +123,10 @@
 		4157BD1B1ED730D400443434 /* Country-Trip */ = {
 			isa = PBXGroup;
 			children = (
+				4157BD581ED7370B00443434 /* Controller */,
+				4157BD571ED736DA00443434 /* View */,
+				4157BD561ED736D300443434 /* Model */,
+				4157BD551ED736C300443434 /* Service */,
 				4157BD1F1ED730D400443434 /* AppDelegate.h */,
 				4157BD201ED730D400443434 /* AppDelegate.m */,
 				4157BD221ED730D400443434 /* ViewController.h */,
@@ -143,6 +167,59 @@
 			path = "Country-TripUITests";
 			sourceTree = "<group>";
 		};
+		4157BD551ED736C300443434 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				4157BD521ED736BC00443434 /* CountryService.h */,
+				4157BD531ED736BC00443434 /* CountryService.m */,
+			);
+			name = Service;
+			sourceTree = "<group>";
+		};
+		4157BD561ED736D300443434 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		4157BD571ED736DA00443434 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		4157BD581ED7370B00443434 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		EC43582F0E0D47F81F1FB439 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9FAB6650BCE1CC3179F806EA /* Pods-Country-Trip.debug.xcconfig */,
+				044FDB31BABBC890AA713FB6 /* Pods-Country-Trip.release.xcconfig */,
+				3DCEC7623F56211797ABB6C2 /* Pods-Country-TripTests.debug.xcconfig */,
+				74EC798397613B547FFCEF1E /* Pods-Country-TripTests.release.xcconfig */,
+				B2D3D69FA9F91E60F910A2ED /* Pods-Country-TripUITests.debug.xcconfig */,
+				E816889C118F29649833F49A /* Pods-Country-TripUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		F478F9C842B37877BB3600F2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8951AE78EEE802BCB2346EAA /* libPods-Country-Trip.a */,
+				3AFF25CEC7F0C38E2566B653 /* libPods-Country-TripTests.a */,
+				73BFD5D2C9FE70E3D366C834 /* libPods-Country-TripUITests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -150,9 +227,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4157BD491ED730D500443434 /* Build configuration list for PBXNativeTarget "Country-Trip" */;
 			buildPhases = (
+				38892319E6B17E8E5553BACA /* [CP] Check Pods Manifest.lock */,
 				4157BD151ED730D400443434 /* Sources */,
 				4157BD161ED730D400443434 /* Frameworks */,
 				4157BD171ED730D400443434 /* Resources */,
+				FE7D77200169482F1F6BBAD1 /* [CP] Embed Pods Frameworks */,
+				406A4D853AF41D2372064BC9 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -167,9 +247,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4157BD4C1ED730D500443434 /* Build configuration list for PBXNativeTarget "Country-TripTests" */;
 			buildPhases = (
+				2359A13B9A4E3C0FC8AE7AC5 /* [CP] Check Pods Manifest.lock */,
 				4157BD311ED730D500443434 /* Sources */,
 				4157BD321ED730D500443434 /* Frameworks */,
 				4157BD331ED730D500443434 /* Resources */,
+				E9D31874EBF4140C0D9BFDAC /* [CP] Embed Pods Frameworks */,
+				7CD115C521569601F5186D7C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -185,9 +268,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4157BD4F1ED730D500443434 /* Build configuration list for PBXNativeTarget "Country-TripUITests" */;
 			buildPhases = (
+				54C76C0AD7224AC729CD4874 /* [CP] Check Pods Manifest.lock */,
 				4157BD3C1ED730D500443434 /* Sources */,
 				4157BD3D1ED730D500443434 /* Frameworks */,
 				4157BD3E1ED730D500443434 /* Resources */,
+				2790B8B8328F68645E1D4D0D /* [CP] Embed Pods Frameworks */,
+				8F89BAA18424C8A87B13BEE8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -274,11 +360,150 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2359A13B9A4E3C0FC8AE7AC5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		2790B8B8328F68645E1D4D0D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Country-TripUITests/Pods-Country-TripUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		38892319E6B17E8E5553BACA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		406A4D853AF41D2372064BC9 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Country-Trip/Pods-Country-Trip-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		54C76C0AD7224AC729CD4874 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		7CD115C521569601F5186D7C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Country-TripTests/Pods-Country-TripTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8F89BAA18424C8A87B13BEE8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Country-TripUITests/Pods-Country-TripUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E9D31874EBF4140C0D9BFDAC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Country-TripTests/Pods-Country-TripTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FE7D77200169482F1F6BBAD1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Country-Trip/Pods-Country-Trip-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		4157BD151ED730D400443434 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4157BD541ED736BC00443434 /* CountryService.m in Sources */,
 				4157BD241ED730D400443434 /* ViewController.m in Sources */,
 				4157BD211ED730D400443434 /* AppDelegate.m in Sources */,
 				4157BD1E1ED730D400443434 /* main.m in Sources */,
@@ -431,6 +656,7 @@
 		};
 		4157BD4A1ED730D500443434 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9FAB6650BCE1CC3179F806EA /* Pods-Country-Trip.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 39H6XWV852;
@@ -443,6 +669,7 @@
 		};
 		4157BD4B1ED730D500443434 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 044FDB31BABBC890AA713FB6 /* Pods-Country-Trip.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 39H6XWV852;
@@ -455,6 +682,7 @@
 		};
 		4157BD4D1ED730D500443434 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3DCEC7623F56211797ABB6C2 /* Pods-Country-TripTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = 39H6XWV852;
@@ -468,6 +696,7 @@
 		};
 		4157BD4E1ED730D500443434 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 74EC798397613B547FFCEF1E /* Pods-Country-TripTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = 39H6XWV852;
@@ -481,6 +710,7 @@
 		};
 		4157BD501ED730D500443434 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B2D3D69FA9F91E60F910A2ED /* Pods-Country-TripUITests.debug.xcconfig */;
 			buildSettings = {
 				DEVELOPMENT_TEAM = 39H6XWV852;
 				INFOPLIST_FILE = "Country-TripUITests/Info.plist";
@@ -493,6 +723,7 @@
 		};
 		4157BD511ED730D500443434 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E816889C118F29649833F49A /* Pods-Country-TripUITests.release.xcconfig */;
 			buildSettings = {
 				DEVELOPMENT_TEAM = 39H6XWV852;
 				INFOPLIST_FILE = "Country-TripUITests/Info.plist";
@@ -522,6 +753,7 @@
 				4157BD4B1ED730D500443434 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4157BD4C1ED730D500443434 /* Build configuration list for PBXNativeTarget "Country-TripTests" */ = {
 			isa = XCConfigurationList;
@@ -530,6 +762,7 @@
 				4157BD4E1ED730D500443434 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4157BD4F1ED730D500443434 /* Build configuration list for PBXNativeTarget "Country-TripUITests" */ = {
 			isa = XCConfigurationList;
@@ -538,6 +771,7 @@
 				4157BD511ED730D500443434 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
