@@ -7,7 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <AFNetworking/AFNetworking.h>
+#import "CountryPropertyObject.h"
+
 
 @interface CountryService : NSObject
 
++ (instancetype)defaultService;
+- (instancetype)init;
+- (void)fetchCountries:(void (^)(NSArray<CountryPropertyObject *> *))success error:(void (^)(NSURLSessionDataTask *task, NSError *error))error;
 @end

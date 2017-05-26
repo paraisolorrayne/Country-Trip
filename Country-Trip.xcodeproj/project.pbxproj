@@ -19,6 +19,9 @@
 		4157BD3A1ED730D500443434 /* Country_TripTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4157BD391ED730D500443434 /* Country_TripTests.m */; };
 		4157BD451ED730D500443434 /* Country_TripUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4157BD441ED730D500443434 /* Country_TripUITests.m */; };
 		4157BD541ED736BC00443434 /* CountryService.m in Sources */ = {isa = PBXBuildFile; fileRef = 4157BD531ED736BC00443434 /* CountryService.m */; };
+		4157BD5B1ED7397B00443434 /* CountryPropertyObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 4157BD5A1ED7397B00443434 /* CountryPropertyObject.m */; };
+		4157BD5E1ED739BE00443434 /* CountryMO.m in Sources */ = {isa = PBXBuildFile; fileRef = 4157BD5D1ED739BE00443434 /* CountryMO.m */; };
+		4157BD611ED7777C00443434 /* CountryCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4157BD601ED7777C00443434 /* CountryCollectionViewCell.m */; };
 		C49A0358D3C88BC5C00B5B03 /* libPods-Country-TripTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AFF25CEC7F0C38E2566B653 /* libPods-Country-TripTests.a */; };
 /* End PBXBuildFile section */
 
@@ -62,6 +65,12 @@
 		4157BD461ED730D500443434 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4157BD521ED736BC00443434 /* CountryService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountryService.h; sourceTree = "<group>"; };
 		4157BD531ED736BC00443434 /* CountryService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountryService.m; sourceTree = "<group>"; };
+		4157BD591ED7397B00443434 /* CountryPropertyObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountryPropertyObject.h; sourceTree = "<group>"; };
+		4157BD5A1ED7397B00443434 /* CountryPropertyObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountryPropertyObject.m; sourceTree = "<group>"; };
+		4157BD5C1ED739BE00443434 /* CountryMO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountryMO.h; sourceTree = "<group>"; };
+		4157BD5D1ED739BE00443434 /* CountryMO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountryMO.m; sourceTree = "<group>"; };
+		4157BD5F1ED7777C00443434 /* CountryCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountryCollectionViewCell.h; sourceTree = "<group>"; };
+		4157BD601ED7777C00443434 /* CountryCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountryCollectionViewCell.m; sourceTree = "<group>"; };
 		73BFD5D2C9FE70E3D366C834 /* libPods-Country-TripUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Country-TripUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		74EC798397613B547FFCEF1E /* Pods-Country-TripTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Country-TripTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Country-TripTests/Pods-Country-TripTests.release.xcconfig"; sourceTree = "<group>"; };
 		8951AE78EEE802BCB2346EAA /* libPods-Country-Trip.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Country-Trip.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -179,6 +188,10 @@
 		4157BD561ED736D300443434 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				4157BD591ED7397B00443434 /* CountryPropertyObject.h */,
+				4157BD5A1ED7397B00443434 /* CountryPropertyObject.m */,
+				4157BD5C1ED739BE00443434 /* CountryMO.h */,
+				4157BD5D1ED739BE00443434 /* CountryMO.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -186,6 +199,8 @@
 		4157BD571ED736DA00443434 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				4157BD5F1ED7777C00443434 /* CountryCollectionViewCell.h */,
+				4157BD601ED7777C00443434 /* CountryCollectionViewCell.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -504,8 +519,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				4157BD541ED736BC00443434 /* CountryService.m in Sources */,
+				4157BD611ED7777C00443434 /* CountryCollectionViewCell.m in Sources */,
 				4157BD241ED730D400443434 /* ViewController.m in Sources */,
+				4157BD5B1ED7397B00443434 /* CountryPropertyObject.m in Sources */,
 				4157BD211ED730D400443434 /* AppDelegate.m in Sources */,
+				4157BD5E1ED739BE00443434 /* CountryMO.m in Sources */,
 				4157BD1E1ED730D400443434 /* main.m in Sources */,
 				4157BD2A1ED730D400443434 /* Country_Trip.xcdatamodeld in Sources */,
 			);
