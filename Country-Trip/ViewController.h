@@ -12,6 +12,8 @@
 #import "CountryPropertyObject.h"
 #import "CountryMO.h"
 #import "CountryCollectionViewCell.h"
+#import "DetailViewController.h"
+
 
 
 @interface ViewController : UIViewController

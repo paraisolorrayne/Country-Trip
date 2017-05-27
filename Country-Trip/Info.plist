@@ -28,6 +28,30 @@
 	<array>
 		<string>armv7</string>
 	</array>
+    <key>CFBundleURLTypes</key>
+    <array>
+        <dict>
+            <key>CFBundleURLSchemes</key>
+            <array>
+                <string>fb1361794700523718</string>
+            </array>
+        </dict>
+    </array>
+    <key>FacebookAppID</key>
+    <string>1361794700523718</string>
+    <key>FacebookDisplayName</key>
+    <string>Country Trip</string>
+    <key>LSApplicationQueriesSchemes</key>
+    <array>
+        <string>fbapi</string>
+        <string>fb-messenger-api</string>
+        <string>fbauth2</string>
+        <string>fbshareextension</string>
+    </array>
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>To access your current location</string>
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>To share </string>
     <key>NSAppTransportSecurity</key>
     <dict>
         <key>NSAllowsArbitraryLoads</key>

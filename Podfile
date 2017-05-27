@@ -5,6 +5,9 @@ target 'Country-Trip' do
   # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
   # use_frameworks!
   pod 'AFNetworking'
+  pod 'FBSDKCoreKit'
+  pod 'FBSDKLoginKit'
+  pod 'FBSDKShareKit'
   # Pods for Country-Trip
 
   target 'Country-TripTests' do

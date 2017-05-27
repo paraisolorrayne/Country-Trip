@@ -22,6 +22,8 @@
 		4157BD5B1ED7397B00443434 /* CountryPropertyObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 4157BD5A1ED7397B00443434 /* CountryPropertyObject.m */; };
 		4157BD5E1ED739BE00443434 /* CountryMO.m in Sources */ = {isa = PBXBuildFile; fileRef = 4157BD5D1ED739BE00443434 /* CountryMO.m */; };
 		4157BD611ED7777C00443434 /* CountryCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4157BD601ED7777C00443434 /* CountryCollectionViewCell.m */; };
+		4157BD641ED89AF600443434 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4157BD631ED89AF600443434 /* DetailViewController.m */; };
+		41FD7EC11ED9BA030049FD81 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41FD7EC01ED9BA030049FD81 /* ProfileViewController.m */; };
 		C49A0358D3C88BC5C00B5B03 /* libPods-Country-TripTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AFF25CEC7F0C38E2566B653 /* libPods-Country-TripTests.a */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +73,10 @@
 		4157BD5D1ED739BE00443434 /* CountryMO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountryMO.m; sourceTree = "<group>"; };
 		4157BD5F1ED7777C00443434 /* CountryCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountryCollectionViewCell.h; sourceTree = "<group>"; };
 		4157BD601ED7777C00443434 /* CountryCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountryCollectionViewCell.m; sourceTree = "<group>"; };
+		4157BD621ED89AF600443434 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		4157BD631ED89AF600443434 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		41FD7EBF1ED9BA030049FD81 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		41FD7EC01ED9BA030049FD81 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		73BFD5D2C9FE70E3D366C834 /* libPods-Country-TripUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Country-TripUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		74EC798397613B547FFCEF1E /* Pods-Country-TripTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Country-TripTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Country-TripTests/Pods-Country-TripTests.release.xcconfig"; sourceTree = "<group>"; };
 		8951AE78EEE802BCB2346EAA /* libPods-Country-Trip.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Country-Trip.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -146,6 +152,8 @@
 				4157BD301ED730D400443434 /* Info.plist */,
 				4157BD281ED730D400443434 /* Country_Trip.xcdatamodeld */,
 				4157BD1C1ED730D400443434 /* Supporting Files */,
+				41FD7EBF1ED9BA030049FD81 /* ProfileViewController.h */,
+				41FD7EC01ED9BA030049FD81 /* ProfileViewController.m */,
 			);
 			path = "Country-Trip";
 			sourceTree = "<group>";
@@ -201,6 +209,8 @@
 			children = (
 				4157BD5F1ED7777C00443434 /* CountryCollectionViewCell.h */,
 				4157BD601ED7777C00443434 /* CountryCollectionViewCell.m */,
+				4157BD621ED89AF600443434 /* DetailViewController.h */,
+				4157BD631ED89AF600443434 /* DetailViewController.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -520,7 +530,9 @@
 			files = (
 				4157BD541ED736BC00443434 /* CountryService.m in Sources */,
 				4157BD611ED7777C00443434 /* CountryCollectionViewCell.m in Sources */,
+				4157BD641ED89AF600443434 /* DetailViewController.m in Sources */,
 				4157BD241ED730D400443434 /* ViewController.m in Sources */,
+				41FD7EC11ED9BA030049FD81 /* ProfileViewController.m in Sources */,
 				4157BD5B1ED7397B00443434 /* CountryPropertyObject.m in Sources */,
 				4157BD211ED730D400443434 /* AppDelegate.m in Sources */,
 				4157BD5E1ED739BE00443434 /* CountryMO.m in Sources */,

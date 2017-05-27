@@ -1,7 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -16,7 +20,44 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="world-trip" translatesAutoresizingMaskIntoConstraints="NO" id="DtK-ws-mIf">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7jx-Ye-gBl">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0ct-DL-Y88">
+                                        <rect key="frame" x="0.0" y="552" width="375" height="75"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="75" id="O0u-6a-qba"/>
+                                        </constraints>
+                                        <string key="text">Teste Mobile
+Cedro Technologies</string>
+                                        <fontDescription key="fontDescription" name="CourierNewPS-BoldItalicMT" family="Courier New" pointSize="25"/>
+                                        <color key="textColor" red="0.59999999999999998" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="0ct-DL-Y88" secondAttribute="trailing" id="Xh5-eh-xQU"/>
+                                    <constraint firstAttribute="bottom" secondItem="0ct-DL-Y88" secondAttribute="bottom" constant="20" id="lC4-sh-qOn"/>
+                                    <constraint firstItem="0ct-DL-Y88" firstAttribute="leading" secondItem="7jx-Ye-gBl" secondAttribute="leading" id="pPp-bQ-OhX"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="DtK-ws-mIf" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" id="CgI-St-Tqr"/>
+                            <constraint firstItem="7jx-Ye-gBl" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" id="JGj-wF-XOS"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="DtK-ws-mIf" secondAttribute="bottom" id="NCn-qv-J3E"/>
+                            <constraint firstItem="DtK-ws-mIf" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="S0L-Xo-zSU"/>
+                            <constraint firstItem="7jx-Ye-gBl" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="gDB-D9-jAx"/>
+                            <constraint firstAttribute="trailing" secondItem="DtK-ws-mIf" secondAttribute="trailing" id="gik-fp-kMJ"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="7jx-Ye-gBl" secondAttribute="bottom" id="gqd-AS-Zwh"/>
+                            <constraint firstAttribute="trailing" secondItem="7jx-Ye-gBl" secondAttribute="trailing" id="oKd-i3-AdL"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -24,4 +65,7 @@
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="world-trip" width="320" height="640"/>
+    </resources>
 </document>

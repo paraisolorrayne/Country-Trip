@@ -35,8 +35,12 @@
 
 - (void)searchCountries {
     [[CountryService defaultService]fetchCountries:^(NSArray<CountryPropertyObject*> *countriesCollectionResultsPopular) {
+        _loading.hidden = NO;
+        [_loading startAnimating];
         self.countryCollectionResults = [(self.countryCollectionResults ?: @[]) arrayByAddingObjectsFromArray:countriesCollectionResultsPopular];
          [self.countryCollectionView reloadData];
+        [_loading stopAnimating];
+        [_loading hidesWhenStopped];
     } error:^(NSURLSessionDataTask *task, NSError *error) {
         NSLog(@"Erro");
     } ];
@@ -75,6 +79,7 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     CountryCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"country" forIndexPath:indexPath];
     CountryPropertyObject *country = self.countryCollectionResults [indexPath.row];
+    
     cell.countryName.text = [NSString stringWithFormat:@"%@", country.shortname];
     
     //NSString *posterUrlcomplete = [NSString stringWithFormat:@"%@%@", kTMDbPosterPath, movie.poster_path];
@@ -85,10 +90,10 @@
 
 - (void) collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     NSLog(@" segue para a tela de detalhes do filme");
-   /* DetailsViewController *movieDetailView = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"Details"];
-    MoviePropertyObject *movie = self.movieCollectionResultsPop [indexPath.row];
-    movieDetailView.movieDetail = movie;
-    [self.navigationController pushViewController:movieDetailView animated:YES];*/
+   DetailViewController *countryDetailView = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"Details"];
+    CountryPropertyObject *country = self.countryCollectionResults [indexPath.row];
+    countryDetailView.countryDetail = country;
+    [self.navigationController pushViewController: countryDetailView animated:YES];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
