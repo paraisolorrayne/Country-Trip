@@ -8,6 +8,7 @@
 
 #import "CountryService.h"
 static NSString *const kUrlBase = @"http://awseb-e-e-awsebloa-c5zq0lwotmwj-832470836.us-east-1.elb.amazonaws.com";
+
 @interface CountryService ()
 @property (strong, nonatomic) AFHTTPSessionManager *manager;
 @end
