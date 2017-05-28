@@ -20,6 +20,14 @@
     return ctrl;
 }
 
+-(void)actionDismissPopup {
+    [self dismissPopup:^{
+        if ([self.delegate respondsToSelector:@selector(didClickOkOnSuccess:)]) {
+            [self.delegate didClickOkOnSuccess:self];
+        }
+    }];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
