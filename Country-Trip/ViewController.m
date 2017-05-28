@@ -7,11 +7,12 @@
 //
 
 #import "ViewController.h"
-
-@interface ViewController () <UICollectionViewDelegate, UICollectionViewDataSource>
+static NSString *const kUrlImage = @"http://awseb-e-e-awsebloa-c5zq0lwotmwj-832470836.us-east-1.elb.amazonaws.com/world/countries/";
+@interface ViewController () <UICollectionViewDelegate, UICollectionViewDataSource, UISearchBarDelegate>
 @property (strong, nonatomic) IBOutlet UIActivityIndicatorView *loading;
 @property (strong, nonatomic) CountryPropertyObject *country;
 @property (strong, nonatomic) IBOutlet UICollectionView *countryCollectionView;
+@property (strong, nonatomic) IBOutlet UISearchBar *searchBar;
 @end
 
 @implementation ViewController
@@ -22,7 +23,7 @@
     // Do any additional setup after loading the view, typically from a nib.
 }
 
--(void)viewWillAppear:(BOOL)animated {
+- (void)viewWillAppear:(BOOL)animated {
     [_countryCollectionView reloadData];
 }
 
@@ -38,7 +39,7 @@
         _loading.hidden = NO;
         [_loading startAnimating];
         self.countryCollectionResults = [(self.countryCollectionResults ?: @[]) arrayByAddingObjectsFromArray:countriesCollectionResultsPopular];
-         [self.countryCollectionView reloadData];
+        [self.countryCollectionView reloadData];
         [_loading stopAnimating];
         [_loading hidesWhenStopped];
     } error:^(NSURLSessionDataTask *task, NSError *error) {
@@ -53,22 +54,60 @@
         [self searchCountries];
     } else {
         UIAlertController *view = [UIAlertController alertControllerWithTitle:@""
-                                                                      message: [NSString stringWithFormat:@"Sem conexão com a Internet!"]
-                                                               preferredStyle:UIAlertControllerStyleAlert];
+            message: [NSString stringWithFormat:@"Sem conexão com a Internet!"]
+            preferredStyle:UIAlertControllerStyleAlert];
         UIAlertAction *ok = [UIAlertAction actionWithTitle:@"OK"
-                                                     style:UIAlertActionStyleDestructive
-                                                   handler:^(UIAlertAction * action) {
+                                           style:UIAlertActionStyleDestructive
+                                           handler:^(UIAlertAction * action) {
                                                        [view dismissViewControllerAnimated:YES completion:^{
                                                            [self.view endEditing:YES];
                                                        }];
                                                    }];
         [view addAction:ok];
         [self presentViewController:view animated:YES completion:nil];
-
+        
     }
 }
 
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
+    NSMutableArray *filtroStrings;
+    NSMutableArray *totalStrings;
+    filtroStrings = [[NSMutableArray alloc]init];
+    for (NSString *str in totalStrings) {
+        NSRange stringRange=[str rangeOfString:searchText options:NSCaseInsensitiveSearch];
+        if (stringRange.location != NSNotFound) {
+            [filtroStrings addObject:str];
+        }
+    [self.countryCollectionView reloadData];
+    }
+    
+}
+
+
 #pragma mark - Actions
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+    [_countryCollectionView reloadData];
+    [self searchBar:_searchBar textDidChange:_searchBar.text];
+    [self becomeFirstResponder];
+    [self.loading startAnimating];
+    [_countryCollectionView reloadData];
+    [self.loading stopAnimating];
+}
+
+#pragma mark - <UISearchBarDelegate>
+
+- (BOOL)canBecomeFirstResponder {
+    return YES;
+}
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    UITouch *touch = [[event allTouches] anyObject];
+    if ([_searchBar isFirstResponder] && [touch view] != _searchBar) {
+        [_searchBar resignFirstResponder];
+    }
+    [super touchesBegan:touches withEvent:event];
+}
 
 #pragma mark - <UICollectionViewDataSource>
 
@@ -81,16 +120,17 @@
     CountryPropertyObject *country = self.countryCollectionResults [indexPath.row];
     
     cell.countryName.text = [NSString stringWithFormat:@"%@", country.shortname];
-    
-    //NSString *posterUrlcomplete = [NSString stringWithFormat:@"%@%@", kTMDbPosterPath, movie.poster_path];
-    //NSURL *posterUrlComplete = [NSURL URLWithString:posterUrlcomplete];
-    //[cell.posterCollection setImageWithURL:posterUrlComplete];
+    [cell.posterCollection cancelImageDownloadTask];
+    NSString *posterStringComplete = [NSString stringWithFormat:@"%@%@/flag", kUrlImage, country.idCountry];
+    NSURL *posterUrlComplete = [NSURL URLWithString:posterStringComplete];
+    country.posterUrl = posterUrlComplete;
+    [cell.posterCollection setImageWithURL:posterUrlComplete];
     return cell;
 }
 
 - (void) collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     NSLog(@" segue para a tela de detalhes do filme");
-   DetailViewController *countryDetailView = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"Details"];
+    DetailViewController *countryDetailView = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"Details"];
     CountryPropertyObject *country = self.countryCollectionResults [indexPath.row];
     countryDetailView.countryDetail = country;
     [self.navigationController pushViewController: countryDetailView animated:YES];

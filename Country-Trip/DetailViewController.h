@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AFNetworking/UIImageView+AFNetworking.h>
 #import "CountryPropertyObject.h"
+#import "CountryMO.h"
 
 @interface DetailViewController : UIViewController
 @property (strong, nonatomic) CountryPropertyObject *countryDetail;
+@property (strong, nonatomic) CountryMO *countryData;
 @end

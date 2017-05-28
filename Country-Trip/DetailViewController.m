@@ -8,6 +8,8 @@
 
 #import "DetailViewController.h"
 
+static NSString *const kUrlImage = @"http://awseb-e-e-awsebloa-c5zq0lwotmwj-832470836.us-east-1.elb.amazonaws.com/world/countries/";
+
 @interface DetailViewController ()
 @property (strong, nonatomic) IBOutlet UIImageView *countryImageView;
 @property (strong, nonatomic) IBOutlet UILabel *longNameLabel;
@@ -26,6 +28,11 @@
     _longNameLabel.text = _countryDetail.longname;
     NSString *callingCode = [@"Calling Code: " stringByAppendingString:_countryDetail.callingCode];
     _callingCodeLabel.text = callingCode;
+    [_countryImageView cancelImageDownloadTask];
+    self.countryImageView.image = [UIImage imageNamed:@"default"];
+    if (_countryDetail.posterUrl) {
+        [_countryImageView setImageWithURL:_countryDetail.posterUrl];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -34,7 +41,9 @@
 }
 
 - (void)saveCountryInCoreData {
-    
+    _countryData.shortname = _countryDetail.shortname;
+    _countryData.longname = _countryDetail.longname;
+    _countryData.callingCode = _countryDetail.callingCode;
 }
 
 - (IBAction)markVisited:(id)sender {

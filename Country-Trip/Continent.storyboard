@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="OpenSans-Regular.ttf">
+            <string>OpenSans</string>
+        </array>
+        <array key="OpenSans-Semibold.ttf">
+            <string>OpenSans-Semibold</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Continent Popup View Controller-->
+        <scene sceneID="8J0-H7-J8P">
+            <objects>
+                <viewController storyboardIdentifier="Social" modalPresentationStyle="overCurrentContext" id="Ijv-HL-sL7" customClass="ContinentPopupViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="low-DY-MP6"/>
+                        <viewControllerLayoutGuide type="bottom" id="ns0-p8-krl"/>
+                    </layoutGuides>
+                    <view key="view" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="Vuz-tJ-kOE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mDy-OT-DJE" customClass="RoundedBorderView">
+                                <rect key="frame" x="52.5" y="211" width="270" height="245"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="749" text="Estamos nas redes sociais" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zYh-qK-ynr">
+                                        <rect key="frame" x="9.5" y="19.5" width="250" height="23.5"/>
+                                        <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans" pointSize="20"/>
+                                        <color key="textColor" red="0.098039215690000001" green="0.22163628469999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Q0-bK-J5c">
+                                        <rect key="frame" x="-0.5" y="63" width="270" height="112"/>
+                                        <attributedString key="attributedText">
+                                            <fragment>
+                                                <string key="content">Pensando em estar sempre perto
+Mantemos nossas redes sociais
+sempre disponíveis, levando
+até você novidades e notícias.
+Acompanhe-nos pelo Facebook e Instagram!</string>
+                                                <attributes>
+                                                    <color key="NSBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
+                                                    <color key="NSColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <font key="NSFont" size="16" name="OpenSans"/>
+                                                    <real key="NSKern" value="0.0"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="16" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                        <tabStops/>
+                                                    </paragraphStyle>
+                                                    <color key="NSStrokeColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <real key="NSStrokeWidth" value="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RHd-Vc-3OB" customClass="RoundedButton">
+                                        <rect key="frame" x="97.5" y="195" width="75" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="75" id="UYf-tZ-tHu"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="20"/>
+                                        <state key="normal" title="Ok">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="0.0" green="0.59999999999999998" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
+                                                <color key="value" red="0.28235294119999998" green="0.76078431369999999" blue="0.78823529410000004" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="actionOk:" destination="Ijv-HL-sL7" eventType="touchUpInside" id="uSf-1b-5zP"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rbp-95-Jof">
+                                        <rect key="frame" x="12" y="195" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="U8J-c8-71M"/>
+                                            <constraint firstAttribute="width" constant="40" id="i4q-UD-fnI"/>
+                                        </constraints>
+                                        <state key="normal" image="facebook-square"/>
+                                        <connections>
+                                            <action selector="canOpenFacebook:" destination="Ijv-HL-sL7" eventType="touchUpInside" id="uMW-kB-CN6"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ngx-iD-7Vn">
+                                        <rect key="frame" x="218" y="195" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="VA4-gg-E1g"/>
+                                            <constraint firstAttribute="width" constant="40" id="ihZ-9t-f32"/>
+                                        </constraints>
+                                        <state key="normal" image="instagram-square"/>
+                                        <connections>
+                                            <action selector="canOpenInstagram:" destination="Ijv-HL-sL7" eventType="touchUpInside" id="npo-5i-lCh"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="1Q0-bK-J5c" secondAttribute="trailing" id="36G-zD-ToT"/>
+                                    <constraint firstItem="ngx-iD-7Vn" firstAttribute="top" secondItem="rbp-95-Jof" secondAttribute="top" id="689-eN-GgZ"/>
+                                    <constraint firstItem="RHd-Vc-3OB" firstAttribute="top" secondItem="rbp-95-Jof" secondAttribute="top" id="KIt-ln-6T6"/>
+                                    <constraint firstItem="zYh-qK-ynr" firstAttribute="top" secondItem="mDy-OT-DJE" secondAttribute="top" constant="20" id="LvN-DF-ZoR"/>
+                                    <constraint firstItem="zYh-qK-ynr" firstAttribute="leading" secondItem="mDy-OT-DJE" secondAttribute="leading" constant="10" id="NIu-gf-1dr"/>
+                                    <constraint firstItem="1Q0-bK-J5c" firstAttribute="leading" secondItem="mDy-OT-DJE" secondAttribute="leading" id="THR-ta-kgf"/>
+                                    <constraint firstAttribute="bottom" secondItem="RHd-Vc-3OB" secondAttribute="bottom" constant="10" id="Zwe-Up-67d"/>
+                                    <constraint firstItem="RHd-Vc-3OB" firstAttribute="top" secondItem="1Q0-bK-J5c" secondAttribute="bottom" constant="20" id="bgK-Uz-ozU"/>
+                                    <constraint firstItem="RHd-Vc-3OB" firstAttribute="centerX" secondItem="mDy-OT-DJE" secondAttribute="centerX" id="cCR-e5-Wa9"/>
+                                    <constraint firstItem="1Q0-bK-J5c" firstAttribute="top" secondItem="zYh-qK-ynr" secondAttribute="bottom" constant="20" id="ci1-9o-0Dz"/>
+                                    <constraint firstItem="ngx-iD-7Vn" firstAttribute="bottom" secondItem="rbp-95-Jof" secondAttribute="bottom" id="cyc-nZ-aBd"/>
+                                    <constraint firstAttribute="width" constant="270" id="eZ2-Tq-Eag"/>
+                                    <constraint firstItem="RHd-Vc-3OB" firstAttribute="bottom" secondItem="rbp-95-Jof" secondAttribute="bottom" id="gD5-a8-E2V"/>
+                                    <constraint firstItem="rbp-95-Jof" firstAttribute="leading" secondItem="mDy-OT-DJE" secondAttribute="leading" constant="12" id="h9b-Pr-Z9Y"/>
+                                    <constraint firstAttribute="trailing" secondItem="ngx-iD-7Vn" secondAttribute="trailing" constant="12" id="nbT-2k-H0V"/>
+                                    <constraint firstItem="1Q0-bK-J5c" firstAttribute="centerX" secondItem="mDy-OT-DJE" secondAttribute="centerX" id="qU1-5P-jHb"/>
+                                    <constraint firstAttribute="trailing" secondItem="zYh-qK-ynr" secondAttribute="trailing" constant="10" id="xe9-To-x5i"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <integer key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="mDy-OT-DJE" firstAttribute="centerX" secondItem="Vuz-tJ-kOE" secondAttribute="centerX" id="ba8-bx-Y9P"/>
+                            <constraint firstItem="mDy-OT-DJE" firstAttribute="centerY" secondItem="Vuz-tJ-kOE" secondAttribute="centerY" id="t1c-pP-X5N"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="w4g-hE-gEo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="52" y="-142"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="facebook-square" width="16" height="16"/>
+        <image name="instagram-square" width="16" height="16"/>
+    </resources>
+</document>
