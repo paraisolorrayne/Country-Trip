@@ -7,12 +7,15 @@
 //
 
 #import "ViewController.h"
+#import "ContinentPopupViewController.h"
 static NSString *const kUrlImage = @"http://awseb-e-e-awsebloa-c5zq0lwotmwj-832470836.us-east-1.elb.amazonaws.com/world/countries/";
 @interface ViewController () <UICollectionViewDelegate, UICollectionViewDataSource, UISearchBarDelegate>
 @property (strong, nonatomic) IBOutlet UIActivityIndicatorView *loading;
 @property (strong, nonatomic) CountryPropertyObject *country;
 @property (strong, nonatomic) IBOutlet UICollectionView *countryCollectionView;
 @property (strong, nonatomic) IBOutlet UISearchBar *searchBar;
+@property (strong, nonatomic) IBOutlet UISegmentedControl *segmentedContinentControl;
+
 @end
 
 @implementation ViewController
@@ -94,6 +97,34 @@ static NSString *const kUrlImage = @"http://awseb-e-e-awsebloa-c5zq0lwotmwj-8324
     [_countryCollectionView reloadData];
     [self.loading stopAnimating];
 }
+
+- (IBAction)selectSegment:(id)sender {
+    switch (self.segmentedContinentControl.selectedSegmentIndex) {
+        case 0: //Asia
+            ContinentPopupViewController *popup = [ContinentPopupViewController instantiateNewView];
+            [popup presentInRootViewControllerOfViewController:self completion:nil];
+            break;
+        case 1: //Africa
+            ContinentPopupViewController *popup = [ContinentPopupViewController instantiateNewView];
+            [popup presentInRootViewControllerOfViewController:self completion:nil];
+            break;
+        case 2: //America
+            ContinentPopupViewController *popup = [ContinentPopupViewController instantiateNewView];
+            [popup presentInRootViewControllerOfViewController:self completion:nil];
+            break;
+        case 3: //Europa
+            ContinentPopupViewController *popup = [ContinentPopupViewController instantiateNewView];
+            [popup presentInRootViewControllerOfViewController:self completion:nil];
+            break;
+            case 4: //Oceania
+                ContinentPopupViewController *popup = [ContinentPopupViewController instantiateNewView];
+            [popup presentInRootViewControllerOfViewController:self completion:nil];
+             break;
+        default: ;
+            break;
+    }
+}
+
 
 #pragma mark - <UISearchBarDelegate>
 

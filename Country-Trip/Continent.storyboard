@@ -20,7 +20,7 @@
         <!--Continent Popup View Controller-->
         <scene sceneID="8J0-H7-J8P">
             <objects>
-                <viewController storyboardIdentifier="Social" modalPresentationStyle="overCurrentContext" id="Ijv-HL-sL7" customClass="ContinentPopupViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Continent" modalPresentationStyle="overCurrentContext" id="Ijv-HL-sL7" customClass="ContinentPopupViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="low-DY-MP6"/>
                         <viewControllerLayoutGuide type="bottom" id="ns0-p8-krl"/>
@@ -30,9 +30,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mDy-OT-DJE" customClass="RoundedBorderView">
-                                <rect key="frame" x="52.5" y="211" width="270" height="245"/>
+                                <rect key="frame" x="52.5" y="213" width="270" height="241"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="749" text="Estamos nas redes sociais" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zYh-qK-ynr">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="749" text="Continent" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zYh-qK-ynr">
                                         <rect key="frame" x="9.5" y="19.5" width="250" height="23.5"/>
                                         <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans" pointSize="20"/>
                                         <color key="textColor" red="0.098039215690000001" green="0.22163628469999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -63,7 +63,7 @@ Acompanhe-nos pelo Facebook e Instagram!</string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RHd-Vc-3OB" customClass="RoundedButton">
-                                        <rect key="frame" x="97.5" y="195" width="75" height="40"/>
+                                        <rect key="frame" x="97.5" y="195" width="75" height="36"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="75" id="UYf-tZ-tHu"/>
                                         </constraints>
@@ -86,34 +86,10 @@ Acompanhe-nos pelo Facebook e Instagram!</string>
                                             <action selector="actionOk:" destination="Ijv-HL-sL7" eventType="touchUpInside" id="uSf-1b-5zP"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rbp-95-Jof">
-                                        <rect key="frame" x="12" y="195" width="40" height="40"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="U8J-c8-71M"/>
-                                            <constraint firstAttribute="width" constant="40" id="i4q-UD-fnI"/>
-                                        </constraints>
-                                        <state key="normal" image="facebook-square"/>
-                                        <connections>
-                                            <action selector="canOpenFacebook:" destination="Ijv-HL-sL7" eventType="touchUpInside" id="uMW-kB-CN6"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ngx-iD-7Vn">
-                                        <rect key="frame" x="218" y="195" width="40" height="40"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="VA4-gg-E1g"/>
-                                            <constraint firstAttribute="width" constant="40" id="ihZ-9t-f32"/>
-                                        </constraints>
-                                        <state key="normal" image="instagram-square"/>
-                                        <connections>
-                                            <action selector="canOpenInstagram:" destination="Ijv-HL-sL7" eventType="touchUpInside" id="npo-5i-lCh"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="1Q0-bK-J5c" secondAttribute="trailing" id="36G-zD-ToT"/>
-                                    <constraint firstItem="ngx-iD-7Vn" firstAttribute="top" secondItem="rbp-95-Jof" secondAttribute="top" id="689-eN-GgZ"/>
-                                    <constraint firstItem="RHd-Vc-3OB" firstAttribute="top" secondItem="rbp-95-Jof" secondAttribute="top" id="KIt-ln-6T6"/>
                                     <constraint firstItem="zYh-qK-ynr" firstAttribute="top" secondItem="mDy-OT-DJE" secondAttribute="top" constant="20" id="LvN-DF-ZoR"/>
                                     <constraint firstItem="zYh-qK-ynr" firstAttribute="leading" secondItem="mDy-OT-DJE" secondAttribute="leading" constant="10" id="NIu-gf-1dr"/>
                                     <constraint firstItem="1Q0-bK-J5c" firstAttribute="leading" secondItem="mDy-OT-DJE" secondAttribute="leading" id="THR-ta-kgf"/>
@@ -121,11 +97,7 @@ Acompanhe-nos pelo Facebook e Instagram!</string>
                                     <constraint firstItem="RHd-Vc-3OB" firstAttribute="top" secondItem="1Q0-bK-J5c" secondAttribute="bottom" constant="20" id="bgK-Uz-ozU"/>
                                     <constraint firstItem="RHd-Vc-3OB" firstAttribute="centerX" secondItem="mDy-OT-DJE" secondAttribute="centerX" id="cCR-e5-Wa9"/>
                                     <constraint firstItem="1Q0-bK-J5c" firstAttribute="top" secondItem="zYh-qK-ynr" secondAttribute="bottom" constant="20" id="ci1-9o-0Dz"/>
-                                    <constraint firstItem="ngx-iD-7Vn" firstAttribute="bottom" secondItem="rbp-95-Jof" secondAttribute="bottom" id="cyc-nZ-aBd"/>
                                     <constraint firstAttribute="width" constant="270" id="eZ2-Tq-Eag"/>
-                                    <constraint firstItem="RHd-Vc-3OB" firstAttribute="bottom" secondItem="rbp-95-Jof" secondAttribute="bottom" id="gD5-a8-E2V"/>
-                                    <constraint firstItem="rbp-95-Jof" firstAttribute="leading" secondItem="mDy-OT-DJE" secondAttribute="leading" constant="12" id="h9b-Pr-Z9Y"/>
-                                    <constraint firstAttribute="trailing" secondItem="ngx-iD-7Vn" secondAttribute="trailing" constant="12" id="nbT-2k-H0V"/>
                                     <constraint firstItem="1Q0-bK-J5c" firstAttribute="centerX" secondItem="mDy-OT-DJE" secondAttribute="centerX" id="qU1-5P-jHb"/>
                                     <constraint firstAttribute="trailing" secondItem="zYh-qK-ynr" secondAttribute="trailing" constant="10" id="xe9-To-x5i"/>
                                 </constraints>
@@ -152,8 +124,4 @@ Acompanhe-nos pelo Facebook e Instagram!</string>
             <point key="canvasLocation" x="52" y="-142"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="facebook-square" width="16" height="16"/>
-        <image name="instagram-square" width="16" height="16"/>
-    </resources>
 </document>

@@ -9,20 +9,20 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
+        <!--Country Visited Table View Controller-->
         <scene sceneID="Y60-KO-THY">
             <objects>
-                <tableViewController id="5ER-YQ-ynJ" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="u4i-rC-7Wx">
+                <tableViewController id="5ER-YQ-ynJ" customClass="CountryVisitedTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" id="u4i-rC-7Wx">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Ecj-Cj-m17">
-                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="celldetail" rowHeight="100" id="Ecj-Cj-m17">
+                                <rect key="frame" x="0.0" y="28" width="320" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ecj-Cj-m17" id="hbn-zL-Dat">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -33,10 +33,13 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="h4r-I0-uE3"/>
+                    <connections>
+                        <outlet property="countryTableView" destination="u4i-rC-7Wx" id="uw9-ZQ-2he"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="khb-Zo-P86" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1991" y="124"/>
+            <point key="canvasLocation" x="1989.375" y="123.75"/>
         </scene>
         <!--Country Trip-->
         <scene sceneID="tne-QT-ifu">
@@ -125,6 +128,9 @@
                                     <segment title="Oceania"/>
                                 </segments>
                                 <color key="tintColor" red="1" green="0.59999999999999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="selectSegment:" destination="BYZ-38-t0r" eventType="valueChanged" id="A12-Fj-FfW"/>
+                                </connections>
                             </segmentedControl>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="U41-DY-joM">
                                 <rect key="frame" x="0.0" y="98" width="320" height="44"/>
@@ -158,6 +164,7 @@
                         <outlet property="countryCollectionView" destination="vwV-26-ikM" id="uon-gR-x3c"/>
                         <outlet property="loading" destination="tut-j9-176" id="qYB-eB-JQz"/>
                         <outlet property="searchBar" destination="U41-DY-joM" id="9b0-Nx-Ulx"/>
+                        <outlet property="segmentedContinentControl" destination="YqB-cf-Q3I" id="lHZ-2l-MYp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -238,6 +245,9 @@
                                         <color key="value" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="editVisit:" destination="hev-HS-66Y" eventType="touchUpInside" id="Vw1-Um-VyR"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y0v-S5-VNC">
                                 <rect key="frame" x="282" y="76" width="28" height="35"/>
@@ -294,6 +304,7 @@
                     <connections>
                         <outlet property="callingCodeLabel" destination="XQi-ub-FWU" id="vVi-Yy-wu0"/>
                         <outlet property="countryImageView" destination="fHL-hg-bO7" id="Oo2-2k-4Hm"/>
+                        <outlet property="dateVisitedLabel" destination="7z2-9I-88w" id="Jbi-KP-alN"/>
                         <outlet property="longNameLabel" destination="Mkr-8K-Nmv" id="ZQ9-er-tD6"/>
                     </connections>
                 </viewController>

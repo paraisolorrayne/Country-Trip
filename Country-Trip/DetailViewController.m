@@ -14,6 +14,7 @@ static NSString *const kUrlImage = @"http://awseb-e-e-awsebloa-c5zq0lwotmwj-8324
 @property (strong, nonatomic) IBOutlet UIImageView *countryImageView;
 @property (strong, nonatomic) IBOutlet UILabel *longNameLabel;
 @property (strong, nonatomic) IBOutlet UILabel *callingCodeLabel;
+@property (strong, nonatomic) IBOutlet UILabel *dateVisitedLabel;
 
 @end
 
@@ -33,6 +34,8 @@ static NSString *const kUrlImage = @"http://awseb-e-e-awsebloa-c5zq0lwotmwj-8324
     if (_countryDetail.posterUrl) {
         [_countryImageView setImageWithURL:_countryDetail.posterUrl];
     }
+    _dateVisitedLabel.text = [NSString stringWithFormat:@"%@", _dateTravel];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -44,7 +47,17 @@ static NSString *const kUrlImage = @"http://awseb-e-e-awsebloa-c5zq0lwotmwj-8324
     _countryData.shortname = _countryDetail.shortname;
     _countryData.longname = _countryDetail.longname;
     _countryData.callingCode = _countryDetail.callingCode;
+    _countryData.idCountry = _countryDetail.idCountry;
 }
+
+-(void)clearStackView {
+    NSArray *viewControllersFromStack = [self.navigationController viewControllers];
+    for(UIViewController *currentVC in [viewControllersFromStack reverseObjectEnumerator]) {
+        [currentVC.navigationController popViewControllerAnimated:NO];
+    }
+}
+
+#pragma mark - Action
 
 - (IBAction)markVisited:(id)sender {
     [self saveCountryInCoreData];
@@ -61,7 +74,7 @@ static NSString *const kUrlImage = @"http://awseb-e-e-awsebloa-c5zq0lwotmwj-8324
     UIAlertAction *no = [UIAlertAction actionWithTitle:@"No"
                                                  style:UIAlertActionStyleCancel handler:^(UIAlertAction * action) {
                                                      [view dismissViewControllerAnimated:YES completion:^{
-                                                         [self.view endEditing:YES];
+                                                         [self clearStackView];
                                                      }];
                                                  }];
     
@@ -69,6 +82,12 @@ static NSString *const kUrlImage = @"http://awseb-e-e-awsebloa-c5zq0lwotmwj-8324
     [view addAction: no];
     [self presentViewController:view animated:YES completion:nil];
 }
+
+- (IBAction)editVisit:(id)sender {
+    DateVisitedViewController *popup = [DateVisitedViewController instantiateNewView];
+    [popup presentInRootViewControllerOfViewController:self completion:nil];
+}
+
 
 /*
  #pragma mark - Navigation

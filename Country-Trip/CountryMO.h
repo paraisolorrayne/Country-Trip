@@ -16,4 +16,6 @@
 @property (strong, nonatomic) NSString *callingCode;
 @property (strong, nonatomic) NSString *status;
 @property (strong, nonatomic) NSString *culture;
+@property (strong, nonatomic) NSString *posterString;
+@property (strong, nonatomic) NSURL *posterUrl;
 @end

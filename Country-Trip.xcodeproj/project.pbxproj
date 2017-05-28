@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		03E8FEB72713B530D681F286 /* libPods-Country-Trip.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8951AE78EEE802BCB2346EAA /* libPods-Country-Trip.a */; };
 		3B6E2417182940523AF6F52A /* libPods-Country-TripUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 73BFD5D2C9FE70E3D366C834 /* libPods-Country-TripUITests.a */; };
+		414928051EDB360B00F6558E /* CountryVisitedTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 414928041EDB360B00F6558E /* CountryVisitedTableViewController.m */; };
+		414928071EDB3E0900F6558E /* Date.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 414928061EDB3E0900F6558E /* Date.storyboard */; };
+		4149280A1EDB3E5500F6558E /* DateVisitedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 414928091EDB3E5500F6558E /* DateVisitedViewController.m */; };
 		4157BD1E1ED730D400443434 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4157BD1D1ED730D400443434 /* main.m */; };
 		4157BD211ED730D400443434 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4157BD201ED730D400443434 /* AppDelegate.m */; };
 		4157BD241ED730D400443434 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4157BD231ED730D400443434 /* ViewController.m */; };
@@ -52,6 +55,11 @@
 		044FDB31BABBC890AA713FB6 /* Pods-Country-Trip.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Country-Trip.release.xcconfig"; path = "Pods/Target Support Files/Pods-Country-Trip/Pods-Country-Trip.release.xcconfig"; sourceTree = "<group>"; };
 		3AFF25CEC7F0C38E2566B653 /* libPods-Country-TripTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Country-TripTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DCEC7623F56211797ABB6C2 /* Pods-Country-TripTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Country-TripTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Country-TripTests/Pods-Country-TripTests.debug.xcconfig"; sourceTree = "<group>"; };
+		414928031EDB360B00F6558E /* CountryVisitedTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountryVisitedTableViewController.h; sourceTree = "<group>"; };
+		414928041EDB360B00F6558E /* CountryVisitedTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountryVisitedTableViewController.m; sourceTree = "<group>"; };
+		414928061EDB3E0900F6558E /* Date.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Date.storyboard; sourceTree = "<group>"; };
+		414928081EDB3E5500F6558E /* DateVisitedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateVisitedViewController.h; sourceTree = "<group>"; };
+		414928091EDB3E5500F6558E /* DateVisitedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateVisitedViewController.m; sourceTree = "<group>"; };
 		4157BD191ED730D400443434 /* Country-Trip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Country-Trip.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4157BD1D1ED730D400443434 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4157BD1F1ED730D400443434 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -225,6 +233,11 @@
 				417EDF431EDA6A6100EB170C /* ContinentPopupViewController.h */,
 				417EDF441EDA6A6100EB170C /* ContinentPopupViewController.m */,
 				417EDF461EDA6AAE00EB170C /* Continent.storyboard */,
+				414928031EDB360B00F6558E /* CountryVisitedTableViewController.h */,
+				414928041EDB360B00F6558E /* CountryVisitedTableViewController.m */,
+				414928061EDB3E0900F6558E /* Date.storyboard */,
+				414928081EDB3E5500F6558E /* DateVisitedViewController.h */,
+				414928091EDB3E5500F6558E /* DateVisitedViewController.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -392,6 +405,7 @@
 				4157BD2F1ED730D400443434 /* LaunchScreen.storyboard in Resources */,
 				417EDF471EDA6AAE00EB170C /* Continent.storyboard in Resources */,
 				4157BD2C1ED730D400443434 /* Assets.xcassets in Resources */,
+				414928071EDB3E0900F6558E /* Date.storyboard in Resources */,
 				4157BD271ED730D400443434 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -560,6 +574,7 @@
 				4157BD641ED89AF600443434 /* DetailViewController.m in Sources */,
 				4157BD241ED730D400443434 /* ViewController.m in Sources */,
 				41FD7EC11ED9BA030049FD81 /* ProfileViewController.m in Sources */,
+				414928051EDB360B00F6558E /* CountryVisitedTableViewController.m in Sources */,
 				417EDF3F1EDA630F00EB170C /* BasePopupViewController.m in Sources */,
 				417EDF451EDA6A6100EB170C /* ContinentPopupViewController.m in Sources */,
 				4157BD5B1ED7397B00443434 /* CountryPropertyObject.m in Sources */,
@@ -568,6 +583,7 @@
 				4157BD1E1ED730D400443434 /* main.m in Sources */,
 				4157BD2A1ED730D400443434 /* Country_Trip.xcdatamodeld in Sources */,
 				417EDF421EDA640000EB170C /* RoundedButton.m in Sources */,
+				4149280A1EDB3E5500F6558E /* DateVisitedViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

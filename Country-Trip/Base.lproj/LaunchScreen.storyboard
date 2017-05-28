@@ -21,28 +21,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="world-trip" translatesAutoresizingMaskIntoConstraints="NO" id="DtK-ws-mIf">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="world-splash" translatesAutoresizingMaskIntoConstraints="NO" id="DtK-ws-mIf">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7jx-Ye-gBl">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0ct-DL-Y88">
-                                        <rect key="frame" x="0.0" y="552" width="375" height="75"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.94999999999999996" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0ct-DL-Y88">
+                                        <rect key="frame" x="0.0" y="581" width="375" height="60"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="75" id="O0u-6a-qba"/>
+                                            <constraint firstAttribute="height" constant="60" id="O0u-6a-qba"/>
                                         </constraints>
                                         <string key="text">Teste Mobile
 Cedro Technologies</string>
                                         <fontDescription key="fontDescription" name="CourierNewPS-BoldItalicMT" family="Courier New" pointSize="25"/>
-                                        <color key="textColor" red="0.59999999999999998" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="textColor" red="0.0" green="0.40000000000000002" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <size key="shadowOffset" width="0.0" height="0.0"/>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="0ct-DL-Y88" secondAttribute="trailing" id="Xh5-eh-xQU"/>
-                                    <constraint firstAttribute="bottom" secondItem="0ct-DL-Y88" secondAttribute="bottom" constant="20" id="lC4-sh-qOn"/>
+                                    <constraint firstAttribute="bottom" secondItem="0ct-DL-Y88" secondAttribute="bottom" constant="6" id="lC4-sh-qOn"/>
                                     <constraint firstItem="0ct-DL-Y88" firstAttribute="leading" secondItem="7jx-Ye-gBl" secondAttribute="leading" id="pPp-bQ-OhX"/>
                                 </constraints>
                             </view>
@@ -66,6 +68,6 @@ Cedro Technologies</string>
         </scene>
     </scenes>
     <resources>
-        <image name="world-trip" width="320" height="640"/>
+        <image name="world-splash" width="320" height="640"/>
     </resources>
 </document>

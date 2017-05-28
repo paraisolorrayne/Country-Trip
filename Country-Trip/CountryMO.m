@@ -16,4 +16,6 @@
 @dynamic callingCode;
 @dynamic status;
 @dynamic culture;
+@dynamic posterUrl;
+@dynamic posterString;
 @end
