@@ -38,6 +38,13 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - Action
+
+- (IBAction)dismissPopupOnSuccess:(id)sender {
+    [self actionDismissPopup];
+}
+
+
 /*
 #pragma mark - Navigation
 

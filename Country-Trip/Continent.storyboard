@@ -83,7 +83,7 @@ Acompanhe-nos pelo Facebook e Instagram!</string>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="actionOk:" destination="Ijv-HL-sL7" eventType="touchUpInside" id="uSf-1b-5zP"/>
+                                            <action selector="dismissPopupOnSuccess:" destination="Ijv-HL-sL7" eventType="touchUpInside" id="mXX-F2-OuR"/>
                                         </connections>
                                     </button>
                                 </subviews>

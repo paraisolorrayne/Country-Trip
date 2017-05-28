@@ -42,6 +42,7 @@ static NSString *const kUrlImage = @"http://awseb-e-e-awsebloa-c5zq0lwotmwj-8324
         _loading.hidden = NO;
         [_loading startAnimating];
         self.countryCollectionResults = [(self.countryCollectionResults ?: @[]) arrayByAddingObjectsFromArray:countriesCollectionResultsPopular];
+        [self orderCollection];
         [self.countryCollectionView reloadData];
         [_loading stopAnimating];
         [_loading hidesWhenStopped];
@@ -57,11 +58,11 @@ static NSString *const kUrlImage = @"http://awseb-e-e-awsebloa-c5zq0lwotmwj-8324
         [self searchCountries];
     } else {
         UIAlertController *view = [UIAlertController alertControllerWithTitle:@""
-            message: [NSString stringWithFormat:@"Sem conexão com a Internet!"]
-            preferredStyle:UIAlertControllerStyleAlert];
+                                                                      message: [NSString stringWithFormat:@"Sem conexão com a Internet!"]
+                                                               preferredStyle:UIAlertControllerStyleAlert];
         UIAlertAction *ok = [UIAlertAction actionWithTitle:@"OK"
-                                           style:UIAlertActionStyleDestructive
-                                           handler:^(UIAlertAction * action) {
+                                                     style:UIAlertActionStyleDestructive
+                                                   handler:^(UIAlertAction * action) {
                                                        [view dismissViewControllerAnimated:YES completion:^{
                                                            [self.view endEditing:YES];
                                                        }];
@@ -72,7 +73,7 @@ static NSString *const kUrlImage = @"http://awseb-e-e-awsebloa-c5zq0lwotmwj-8324
     }
 }
 
-- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
+- (void)searchBar2:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
     NSMutableArray *filtroStrings;
     NSMutableArray *totalStrings;
     filtroStrings = [[NSMutableArray alloc]init];
@@ -81,7 +82,7 @@ static NSString *const kUrlImage = @"http://awseb-e-e-awsebloa-c5zq0lwotmwj-8324
         if (stringRange.location != NSNotFound) {
             [filtroStrings addObject:str];
         }
-    [self.countryCollectionView reloadData];
+        [self.countryCollectionView reloadData];
     }
     
 }
@@ -89,14 +90,37 @@ static NSString *const kUrlImage = @"http://awseb-e-e-awsebloa-c5zq0lwotmwj-8324
 
 #pragma mark - Actions
 
-- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+- (void)orderCollection {
+    NSArray <CountryPropertyObject *> *sortedArray;
+    NSSortDescriptor *sort = [NSSortDescriptor sortDescriptorWithKey:@"shortname" ascending:YES];
+    sortedArray=[_countryCollectionResults sortedArrayUsingDescriptors:@[sort]];
+    _countryCollectionResults = sortedArray;
     [_countryCollectionView reloadData];
-    [self searchBar:_searchBar textDidChange:_searchBar.text];
-    [self becomeFirstResponder];
-    [self.loading startAnimating];
-    [_countryCollectionView reloadData];
-    [self.loading stopAnimating];
 }
+
+/*
+ - (void)searchBar:(UISearchBar *) searchBar textDidChange:(NSString *)searchText {
+ NSArray <CountryPropertyObject *> *filteredData;
+ if (_searchBar.text && [_searchBar.text length]) {
+ NSPredicate *filterPredicate = [NSPredicate predicateWithFormat:@"shortname CONTAINS[cd] %@", _searchBar.text];
+ filteredData= [self.countryCollectionResults filteredArrayUsingPredicate:filterPredicate];
+ _countryCollectionResults = filteredData;
+ [self becomeFirstResponder];
+ [self.loading startAnimating];
+ [_countryCollectionView reloadData];
+ [self.loading stopAnimating];
+ 
+ } else {
+ filteredData = _countryCollectionResults;
+ }
+ 
+ [self becomeFirstResponder];
+ [self.loading startAnimating];
+ [_countryCollectionView reloadData];
+ [self.loading stopAnimating];
+ }
+ */
+
 
 - (void)presentPopup {
     ContinentPopupViewController *popup = [ContinentPopupViewController instantiateNewView];
@@ -106,8 +130,9 @@ static NSString *const kUrlImage = @"http://awseb-e-e-awsebloa-c5zq0lwotmwj-8324
 - (IBAction)selectSegment:(id)sender {
     switch (self.segmentedContinentControl.selectedSegmentIndex) {
         case 0: //Asia
+            _countryArray = @[@"Afeganistão", @"Arábia Saudita", @"Arménia", @"Azerbaijão", @"Barein", @"Bangladesh", @"Brunei", @"Butão", @"Camboja", @"Cazaquistão", @"República Popular da China", @"Chipre", @"Cingapura", @"Coréia do Norte", @"Coréia do Sul", @"Egito", @"Emirados Árabes Unidos", @"Filipinas", @"Geórgia", @"Iémen". @"Índia", @"Indonésia", @"Irã", @"Iraque", @"Israel", @"Japão", @"Jordânia", @"Kuwait", @"Laos", @"Líbano", @"Maldivas", @"Malásia", @"Mongólia", @"Myanmar", @"Nepal", @"Omã", @"Paquistão", @"Qatar", @"Quirguistão", @"Rússia", @"Síria", @"Sri Lanka", @"Tadjiquistão", @"Tailândia", @"Taiwan", @"Timor-Leste", @"Turcomenistão", @"Turquia", @"Uzbequistão", @"Vietnã", nil];
             [self presentPopup];
-              break;
+            break;
         case 1: //Africa
             [self presentPopup];
             break;
@@ -117,9 +142,9 @@ static NSString *const kUrlImage = @"http://awseb-e-e-awsebloa-c5zq0lwotmwj-8324
         case 3: //Europa
             [self presentPopup];
             break;
-            case 4: //Oceania
+        case 4: //Oceania
             [self presentPopup];
-             break;
+            break;
         default: ;
             break;
     }
