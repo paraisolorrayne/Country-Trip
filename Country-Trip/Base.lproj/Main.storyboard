@@ -203,7 +203,10 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PyX-cg-F24" customClass="FBSDKLoginButton">
-                                <rect key="frame" x="137" y="391" width="46" height="30"/>
+                                <rect key="frame" x="10" y="371" width="300" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="zYe-dr-bUz"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rjM-DM-KlG">
@@ -229,6 +232,8 @@
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="VRq-j9-Wdq" secondAttribute="trailing" constant="20" id="0iO-Mu-KNI"/>
                             <constraint firstItem="eda-K7-dJ5" firstAttribute="leading" secondItem="uim-hQ-f3G" secondAttribute="leadingMargin" constant="80" id="12w-oe-XkN"/>
+                            <constraint firstItem="PyX-cg-F24" firstAttribute="leading" secondItem="uim-hQ-f3G" secondAttribute="leading" constant="10" id="1p4-jS-LOY"/>
+                            <constraint firstAttribute="trailing" secondItem="PyX-cg-F24" secondAttribute="trailing" constant="10" id="2dX-tS-gV9"/>
                             <constraint firstItem="OIU-79-Lwe" firstAttribute="leading" secondItem="uim-hQ-f3G" secondAttribute="leading" constant="20" id="3l6-jr-mZI"/>
                             <constraint firstItem="VRq-j9-Wdq" firstAttribute="leading" secondItem="uim-hQ-f3G" secondAttribute="leading" constant="20" id="5pU-UY-WGs"/>
                             <constraint firstItem="VRq-j9-Wdq" firstAttribute="top" secondItem="rjM-DM-KlG" secondAttribute="bottom" constant="15" id="7Dh-je-K7w"/>
