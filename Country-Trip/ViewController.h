@@ -19,6 +19,6 @@
 
 @interface ViewController : UIViewController
 @property (strong, nonatomic) NSArray <CountryPropertyObject *> *countryCollectionResults;
-@property (strong, nonatomic) NSArray *countryArray;
+@property (strong, nonatomic) ContinentPopupViewController *popup;
 @end
 
