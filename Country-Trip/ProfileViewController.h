@@ -7,10 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AFNetworking/UIImageView+AFNetworking.h>
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 #import <FBSDKLoginKit/FBSDKLoginButton.h>
-#import <FBSDKGraphRequest.h>
+
+
 
 @interface ProfileViewController : UIViewController
 

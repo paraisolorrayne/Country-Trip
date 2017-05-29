@@ -199,6 +199,7 @@ static NSString *const kUrlImage = @"http://awseb-e-e-awsebloa-c5zq0lwotmwj-8324
     
     cell.countryName.text = [NSString stringWithFormat:@"%@", country.shortname];
     [cell.posterCollection cancelImageDownloadTask];
+    cell.posterCollection.image = [UIImage imageNamed:@"default"];
     NSString *posterStringComplete = [NSString stringWithFormat:@"%@%@/flag", kUrlImage, country.idCountry];
     NSURL *posterUrlComplete = [NSURL URLWithString:posterStringComplete];
     country.posterUrl = posterUrlComplete;

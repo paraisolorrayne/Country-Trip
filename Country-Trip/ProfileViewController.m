@@ -9,7 +9,7 @@
 #import "ProfileViewController.h"
 
 @interface ProfileViewController ()
-@property (strong, nonatomic) IBOutlet FBSDKProfilePictureView *profilePicture;
+@property (strong, nonatomic) IBOutlet UIImageView *profilePicture;
 @property (strong, nonatomic) IBOutlet FBSDKLoginButton *loginButton;
 
 @property (weak, nonatomic) IBOutlet UILabel *lblLoginStatus;
@@ -27,11 +27,38 @@
     self.profilePicture.hidden = shouldHide;
 }
 
--(void)loginViewShowingLoggedInUser:(FBSDKLoginBehavior *)loginView{
-    self.lblLoginStatus.text = @"You are logged in.";
-    [self toggleHiddenState:NO];
+- (void)profileUserInfo {
+    NSDictionary *data = @{ @"fields": @"id,name,email, picture"};
+    
+    if ([FBSDKAccessToken currentAccessToken]) {
+        FBSDKGraphRequest *request = [[FBSDKGraphRequest alloc]
+                                      initWithGraphPath:@"me"
+                                      parameters: data
+                                      HTTPMethod:@"GET"];
+        [request startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection,
+                                              id result,
+                                              NSError *error) {
+            if (!error){
+                NSLog(@"result: %@",result);
+                NSDictionary *dictionary = (NSDictionary *)result;
+                NSString *photoUrl = (NSString *)[dictionary objectForKey:@"picture"];
+                ;
+               /*
+                _profilePicture.image = [UIImage imageNamed:@"user-default"];
+                [_profilePicture cancelImageDownloadTask];
+                if (!photoUrl) {
+                    
+                } else {
+                    NSURL *posterUrlComplete = [NSURL URLWithString:photoUrl];
+                    [_profilePicture setImageWithURL:posterUrlComplete];
+                }
+                */
+            }
+            else {
+                NSLog(@"result: %@",[error description]);
+            }}];
+    }
 }
-
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -40,6 +67,8 @@
     self.lblLoginStatus.text = @"";
     self.loginButton.readPermissions =
     @[@"public_profile", @"email", @"user_friends"];
+    [self profileUserInfo];
+    
     // Do any additional setup after loading the view.
 }
 
