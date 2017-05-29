@@ -141,9 +141,9 @@ static NSString *const kUrlImage = @"http://awseb-e-e-awsebloa-c5zq0lwotmwj-8324
     switch (self.segmentedContinentControl.selectedSegmentIndex) {
         case 0: //Asia
             _nameContinent = @"Asia";
-            _continentDescription = @"this is the largest and most populous continent on earth. Its area is 44.9 million square kilometers, corresponding to 30% of the emerging areas of the globe. The Asian contingent population is 4.1 billion (60% of the world's population). This large continent is divided into 45 countries, with China being the largest (9,596,961 km²) and most inhabited (1.3 billion inhabitants). ";
-            _popup.nameContinent = _nameContinent;
-            _popup.continentDescription = _continentDescription;
+            _continentDescription = @"This is the largest and most populous continent on earth. Its area is 44.9 million square kilometers, corresponding to 30% of the emerging areas of the globe. The Asian contingent population is 4.1 billion (60% of the world's population). This large continent is divided into 45 countries, with China being the largest (9,596,961 km²) and most inhabited (1.3 billion inhabitants). ";
+            self.popup.nameContinent = @"test";
+            self.popup.continentDescription = _continentDescription;
             [self presentPopup];
             break;
         case 1: //Africa
@@ -162,14 +162,14 @@ static NSString *const kUrlImage = @"http://awseb-e-e-awsebloa-c5zq0lwotmwj-8324
             break;
         case 3: //Europa
             _nameContinent = @"Europe";
-            _continentDescription = @"it has 49 countries spread over an area of ​​10.3 million square kilometers. With 749.6 million inhabitants, Europe has the lowest population growth: 0.1% per year. This continent holds the best socioeconomic indicators on the planet.";
+            _continentDescription = @"It has 49 countries spread over an area of ​​10.3 million square kilometers. With 749.6 million inhabitants, Europe has the lowest population growth: 0.1% per year. This continent holds the best socioeconomic indicators on the planet.";
             _popup.nameContinent = _nameContinent;
             _popup.continentDescription = _continentDescription;
             [self presentPopup];
             break;
         case 4: //Oceania
             _nameContinent = @"Oceania";
-            _continentDescription = @"the smallest continental portion, with a territorial extension of 8.5 million square kilometers, with 37.1 million inhabitants, distributed in 14 nations. With the exception of Australia and New Zealand, the countries of this continent have several economic problems.";
+            _continentDescription = @"The smallest continental portion, with a territorial extension of 8.5 million square kilometers, with 37.1 million inhabitants, distributed in 14 nations. With the exception of Australia and New Zealand, the countries of this continent have several economic problems.";
             _popup.nameContinent = _nameContinent;
             _popup.continentDescription = _continentDescription;
             [self presentPopup];

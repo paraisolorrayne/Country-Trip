@@ -9,18 +9,36 @@
 #import "ProfileViewController.h"
 
 @interface ProfileViewController ()
+@property (strong, nonatomic) IBOutlet FBSDKProfilePictureView *profilePicture;
+@property (strong, nonatomic) IBOutlet FBSDKLoginButton *loginButton;
 
+@property (weak, nonatomic) IBOutlet UILabel *lblLoginStatus;
+@property (weak, nonatomic) IBOutlet UILabel *lblUsername;
+@property (weak, nonatomic) IBOutlet UILabel *lblEmail;
+-(void)toggleHiddenState:(BOOL)shouldHide;
 @end
 
 @implementation ProfileViewController
 
+
+-(void)toggleHiddenState:(BOOL)shouldHide{
+    self.lblUsername.hidden = shouldHide;
+    self.lblEmail.hidden = shouldHide;
+    self.profilePicture.hidden = shouldHide;
+}
+
+-(void)loginViewShowingLoggedInUser:(FBSDKLoginBehavior *)loginView{
+    self.lblLoginStatus.text = @"You are logged in.";
+    [self toggleHiddenState:NO];
+}
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    FBSDKLoginButton *loginButton = [[FBSDKLoginButton alloc] init];
-    loginButton.center = self.view.center;
-    [self.view addSubview:loginButton];
-    loginButton.readPermissions =
+    [self toggleHiddenState:YES];
+    self.lblLoginStatus.text = @"";
+    self.loginButton.readPermissions =
     @[@"public_profile", @"email", @"user_friends"];
     // Do any additional setup after loading the view.
 }
