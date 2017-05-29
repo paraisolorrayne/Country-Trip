@@ -74,8 +74,9 @@ static NSString *const kUrlImage = @"http://awseb-e-e-awsebloa-c5zq0lwotmwj-8324
     UIAlertAction *no = [UIAlertAction actionWithTitle:@"No"
                                                  style:UIAlertActionStyleCancel handler:^(UIAlertAction * action) {
                                                      [view dismissViewControllerAnimated:YES completion:^{
-                                                         [self clearStackView];
+                                                         
                                                      }];
+                                                     [self clearStackView];
                                                  }];
     
     [view addAction:yes];

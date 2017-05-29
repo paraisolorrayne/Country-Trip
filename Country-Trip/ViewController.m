@@ -98,28 +98,31 @@ static NSString *const kUrlImage = @"http://awseb-e-e-awsebloa-c5zq0lwotmwj-8324
     [_countryCollectionView reloadData];
 }
 
-/*
- - (void)searchBar:(UISearchBar *) searchBar textDidChange:(NSString *)searchText {
- NSArray <CountryPropertyObject *> *filteredData;
- if (_searchBar.text && [_searchBar.text length]) {
- NSPredicate *filterPredicate = [NSPredicate predicateWithFormat:@"shortname CONTAINS[cd] %@", _searchBar.text];
- filteredData= [self.countryCollectionResults filteredArrayUsingPredicate:filterPredicate];
- _countryCollectionResults = filteredData;
- [self becomeFirstResponder];
- [self.loading startAnimating];
- [_countryCollectionView reloadData];
- [self.loading stopAnimating];
- 
- } else {
- filteredData = _countryCollectionResults;
- }
- 
- [self becomeFirstResponder];
- [self.loading startAnimating];
- [_countryCollectionView reloadData];
- [self.loading stopAnimating];
- }
- */
+
+- (void)searchBar:(UISearchBar *) searchBar textDidChange:(NSString *)searchText {
+    NSArray <CountryPropertyObject *> *filteredData;
+    NSArray <CountryPropertyObject *> *tempData;
+    tempData = _countryCollectionResults;
+    if (_searchBar.text && [_searchBar.text length]) {
+        NSPredicate *filterPredicate = [NSPredicate predicateWithFormat:@"shortname CONTAINS[cd] %@", _searchBar.text];
+        filteredData= [self.countryCollectionResults filteredArrayUsingPredicate:filterPredicate];
+        _countryCollectionResults = filteredData;
+        [self becomeFirstResponder];
+        [self.loading startAnimating];
+        [_countryCollectionView reloadData];
+        _countryCollectionResults = tempData;
+        [self.loading stopAnimating];
+        
+    } else {
+        filteredData = _countryCollectionResults;
+    }
+    
+    [self becomeFirstResponder];
+    [self.loading startAnimating];
+    [_countryCollectionView reloadData];
+    [self.loading stopAnimating];
+}
+
 
 
 - (void)presentPopup {
@@ -130,7 +133,7 @@ static NSString *const kUrlImage = @"http://awseb-e-e-awsebloa-c5zq0lwotmwj-8324
 - (IBAction)selectSegment:(id)sender {
     switch (self.segmentedContinentControl.selectedSegmentIndex) {
         case 0: //Asia
-            _countryArray = @[@"Afeganistão", @"Arábia Saudita", @"Arménia", @"Azerbaijão", @"Barein", @"Bangladesh", @"Brunei", @"Butão", @"Camboja", @"Cazaquistão", @"República Popular da China", @"Chipre", @"Cingapura", @"Coréia do Norte", @"Coréia do Sul", @"Egito", @"Emirados Árabes Unidos", @"Filipinas", @"Geórgia", @"Iémen". @"Índia", @"Indonésia", @"Irã", @"Iraque", @"Israel", @"Japão", @"Jordânia", @"Kuwait", @"Laos", @"Líbano", @"Maldivas", @"Malásia", @"Mongólia", @"Myanmar", @"Nepal", @"Omã", @"Paquistão", @"Qatar", @"Quirguistão", @"Rússia", @"Síria", @"Sri Lanka", @"Tadjiquistão", @"Tailândia", @"Taiwan", @"Timor-Leste", @"Turcomenistão", @"Turquia", @"Uzbequistão", @"Vietnã", nil];
+            // _countryArray = @[@"Afeganistão", @"Arábia Saudita", @"Arménia", @"Azerbaijão", @"Barein", @"Bangladesh", @"Brunei", @"Butão", @"Camboja", @"Cazaquistão", @"República Popular da China", @"Chipre", @"Cingapura", @"Coréia do Norte", @"Coréia do Sul", @"Egito", @"Emirados Árabes Unidos", @"Filipinas", @"Geórgia", @"Iémen". @"Índia", @"Indonésia", @"Irã", @"Iraque", @"Israel", @"Japão", @"Jordânia", @"Kuwait", @"Laos", @"Líbano", @"Maldivas", @"Malásia", @"Mongólia", @"Myanmar", @"Nepal", @"Omã", @"Paquistão", @"Qatar", @"Quirguistão", @"Rússia", @"Síria", @"Sri Lanka", @"Tadjiquistão", @"Tailândia", @"Taiwan", @"Timor-Leste", @"Turcomenistão", @"Turquia", @"Uzbequistão", @"Vietnã", nil];
             [self presentPopup];
             break;
         case 1: //Africa

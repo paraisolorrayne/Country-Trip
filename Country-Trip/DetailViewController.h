@@ -11,6 +11,7 @@
 #import "CountryPropertyObject.h"
 #import "CountryMO.h"
 #import "DateVisitedViewController.h"
+#import "CountryVisitedTableViewController.h"
 
 @interface DetailViewController : UIViewController
 @property (strong, nonatomic) CountryPropertyObject *countryDetail;
