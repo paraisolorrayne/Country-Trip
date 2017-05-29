@@ -9,13 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Country-Trip/ViewController.m"
-            timestampString = "517756389.091618"
+            filePath = "Country-Trip/ContinentPopupViewController.m"
+            timestampString = "517756905.906973"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "142"
-            endingLineNumber = "142"
-            landmarkName = "-selectSegment:"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "-viewDidLoad"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -25,13 +25,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Country-Trip/ContinentPopupViewController.m"
-            timestampString = "517756397.288228"
+            filePath = "Country-Trip/ViewController.m"
+            timestampString = "517756916.278497"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
-            landmarkName = "-viewDidLoad"
+            startingLineNumber = "142"
+            endingLineNumber = "142"
+            landmarkName = "-selectSegment:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
