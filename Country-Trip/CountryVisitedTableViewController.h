@@ -14,5 +14,5 @@
 #import "DetailViewController.h"
 
 @interface CountryVisitedTableViewController : UITableViewController
-
+@property (strong, nonatomic) NSArray <CountryMO *> *countryVisited;
 @end

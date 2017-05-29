@@ -19,4 +19,10 @@
 @interface ContinentPopupViewController : BasePopupViewController
 +(instancetype) instantiateNewView;
 @property (weak, nonatomic) id<ContinentPopupViewControllerDelegate> delegate;
+@property (strong, nonatomic) IBOutlet UILabel *nameContinentLabel;
+@property (strong, nonatomic) NSString *nameContinent;
+@property (strong, nonatomic) IBOutlet UITextView *continentDescriptionTextField;
+@property (strong, nonatomic) NSString *continentDescription;
+
+
 @end

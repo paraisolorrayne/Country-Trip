@@ -15,7 +15,8 @@ static NSString *const kUrlImage = @"http://awseb-e-e-awsebloa-c5zq0lwotmwj-8324
 @property (strong, nonatomic) IBOutlet UICollectionView *countryCollectionView;
 @property (strong, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (strong, nonatomic) IBOutlet UISegmentedControl *segmentedContinentControl;
-
+@property (strong, nonatomic) NSString *continentDescription;
+@property (strong, nonatomic) NSString *nameContinent;
 @end
 
 @implementation ViewController
@@ -87,6 +88,12 @@ static NSString *const kUrlImage = @"http://awseb-e-e-awsebloa-c5zq0lwotmwj-8324
     
 }
 
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    //hides keyboard when another part of layout was touched
+    [self.view endEditing:YES];
+    [super touchesBegan:touches withEvent:event];
+}
+
 
 #pragma mark - Actions
 
@@ -98,51 +105,73 @@ static NSString *const kUrlImage = @"http://awseb-e-e-awsebloa-c5zq0lwotmwj-8324
     [_countryCollectionView reloadData];
 }
 
-/*
- - (void)searchBar:(UISearchBar *) searchBar textDidChange:(NSString *)searchText {
- NSArray <CountryPropertyObject *> *filteredData;
- if (_searchBar.text && [_searchBar.text length]) {
- NSPredicate *filterPredicate = [NSPredicate predicateWithFormat:@"shortname CONTAINS[cd] %@", _searchBar.text];
- filteredData= [self.countryCollectionResults filteredArrayUsingPredicate:filterPredicate];
- _countryCollectionResults = filteredData;
- [self becomeFirstResponder];
- [self.loading startAnimating];
- [_countryCollectionView reloadData];
- [self.loading stopAnimating];
- 
- } else {
- filteredData = _countryCollectionResults;
- }
- 
- [self becomeFirstResponder];
- [self.loading startAnimating];
- [_countryCollectionView reloadData];
- [self.loading stopAnimating];
- }
- */
+
+- (void)searchBar:(UISearchBar *) searchBar textDidChange:(NSString *)searchText {
+    NSArray <CountryPropertyObject *> *filteredData;
+    NSArray <CountryPropertyObject *> *tempData;
+    tempData = _countryCollectionResults;
+    if (_searchBar.text && [_searchBar.text length]) {
+        NSPredicate *filterPredicate = [NSPredicate predicateWithFormat:@"shortname CONTAINS[cd] %@", _searchBar.text];
+        filteredData= [self.countryCollectionResults filteredArrayUsingPredicate:filterPredicate];
+        _countryCollectionResults = filteredData;
+        [self becomeFirstResponder];
+        [self.loading startAnimating];
+        [_countryCollectionView reloadData];
+        _countryCollectionResults = tempData;
+        [self.loading stopAnimating];
+        
+    } else {
+        filteredData = _countryCollectionResults;
+    }
+    
+    [self becomeFirstResponder];
+    [self.loading startAnimating];
+    [_countryCollectionView reloadData];
+    [self.loading stopAnimating];
+}
+
 
 
 - (void)presentPopup {
-    ContinentPopupViewController *popup = [ContinentPopupViewController instantiateNewView];
-    [popup presentInViewController:self completion:nil];
+    self.popup = [ContinentPopupViewController instantiateNewView];
+    [self.popup presentInViewController:self completion:nil];
 }
 
 - (IBAction)selectSegment:(id)sender {
     switch (self.segmentedContinentControl.selectedSegmentIndex) {
         case 0: //Asia
-            _countryArray = @[@"Afeganistão", @"Arábia Saudita", @"Arménia", @"Azerbaijão", @"Barein", @"Bangladesh", @"Brunei", @"Butão", @"Camboja", @"Cazaquistão", @"República Popular da China", @"Chipre", @"Cingapura", @"Coréia do Norte", @"Coréia do Sul", @"Egito", @"Emirados Árabes Unidos", @"Filipinas", @"Geórgia", @"Iémen". @"Índia", @"Indonésia", @"Irã", @"Iraque", @"Israel", @"Japão", @"Jordânia", @"Kuwait", @"Laos", @"Líbano", @"Maldivas", @"Malásia", @"Mongólia", @"Myanmar", @"Nepal", @"Omã", @"Paquistão", @"Qatar", @"Quirguistão", @"Rússia", @"Síria", @"Sri Lanka", @"Tadjiquistão", @"Tailândia", @"Taiwan", @"Timor-Leste", @"Turcomenistão", @"Turquia", @"Uzbequistão", @"Vietnã", nil];
+            _nameContinent = @"Asia";
+            _continentDescription = @"this is the largest and most populous continent on earth. Its area is 44.9 million square kilometers, corresponding to 30% of the emerging areas of the globe. The Asian contingent population is 4.1 billion (60% of the world's population). This large continent is divided into 45 countries, with China being the largest (9,596,961 km²) and most inhabited (1.3 billion inhabitants). ";
+            _popup.nameContinent = _nameContinent;
+            _popup.continentDescription = _continentDescription;
             [self presentPopup];
             break;
         case 1: //Africa
+            _nameContinent = @"Africa";
+            _continentDescription = @"With a territorial extension of 30,198,835 square kilometers, the African continent houses approximately 1.1 billion inhabitants, distributed in 53 countries, with Nigeria being the most populous: 158.2 million people . The African population density is 34 inhabitants per square kilometer; Population growth is the highest in the world: 2.3% a year. The countries of this continent have several socioeconomic problems - AIDS and malaria account for many deaths; More than half of the inhabitants live on less than $ 1.25 a day, that is, below the poverty line; The infant mortality rate is 79 deaths per thousand live births. On the other hand, Africa presents the greatest cultural diversity, besides sheltering beautiful natural landscapes. ";
+            _popup.nameContinent = _nameContinent;
+            _popup.continentDescription = _continentDescription;
             [self presentPopup];
             break;
         case 2: //America
+            _nameContinent = @"America";
+            _continentDescription = @"The American continent has an area of ​​over 42 million square kilometers, divided into North America (23.4 million km²), Central America (735.6 thousand km²) and South America (17.8 million km²). Km²). America is made up of 35 countries, with a population of 934.3 million. The United States and Canada (North American countries) have high Human Development Indexes (HDI), however, Mexico and most of the nations of Central and South America have several socioeconomic problems. America: The American continent has an area of ​​over 42 million square kilometers, divided into North America (23.4 million km²), Central America (735.6 thousand km²) and South America (17.8 million km²). Km²). America is made up of 35 countries, with a population of 934.3 million. The United States and Canada (North American countries) have high Human Development Indexes (HDI), however, Mexico and most of the nations of Central and South America have several socioeconomic problems. America: The American continent has an area of ​​over 42 million square kilometers, divided into North America (23.4 million km²), Central America (735.6 thousand km²) and South America (17.8 million km²). Km²). America is made up of 35 countries, with a population of 934.3 million. The United States and Canada (North American countries) have high Human Development Indexes (HDI), however, Mexico and most of the nations of Central and South America have several socioeconomic problems. And its population is 934.3 million. The United States and Canada (North American countries) have high Human Development Indexes (HDI), however, Mexico and most of the nations of Central and South America have several socioeconomic problems. And its population is 934.3 million. The United States and Canada (North American countries) have high Human Development Indexes (HDI), however, Mexico and most of the nations of Central and South America have several socioeconomic problems.";
+            _popup.nameContinent = _nameContinent;
+            _popup.continentDescription = _continentDescription;
             [self presentPopup];
             break;
         case 3: //Europa
+            _nameContinent = @"Europe";
+            _continentDescription = @"it has 49 countries spread over an area of ​​10.3 million square kilometers. With 749.6 million inhabitants, Europe has the lowest population growth: 0.1% per year. This continent holds the best socioeconomic indicators on the planet.";
+            _popup.nameContinent = _nameContinent;
+            _popup.continentDescription = _continentDescription;
             [self presentPopup];
             break;
         case 4: //Oceania
+            _nameContinent = @"Oceania";
+            _continentDescription = @"the smallest continental portion, with a territorial extension of 8.5 million square kilometers, with 37.1 million inhabitants, distributed in 14 nations. With the exception of Australia and New Zealand, the countries of this continent have several economic problems.";
+            _popup.nameContinent = _nameContinent;
+            _popup.continentDescription = _continentDescription;
             [self presentPopup];
             break;
         default: ;
@@ -157,13 +186,6 @@ static NSString *const kUrlImage = @"http://awseb-e-e-awsebloa-c5zq0lwotmwj-8324
     return YES;
 }
 
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-    UITouch *touch = [[event allTouches] anyObject];
-    if ([_searchBar isFirstResponder] && [touch view] != _searchBar) {
-        [_searchBar resignFirstResponder];
-    }
-    [super touchesBegan:touches withEvent:event];
-}
 
 #pragma mark - <UICollectionViewDataSource>
 

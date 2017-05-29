@@ -49,13 +49,13 @@
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
     CountryMO *countryMO = self.countries [indexPath.row];
-    cell.detailTextLabel.text = countryMO.shortname;
+    //cell.detailTextLabel.text = countryMO.shortname;
     cell.textLabel.text = countryMO.longname;
-    [cell.imageView cancelImageDownloadTask];
-    cell.imageView.image = [UIImage imageNamed:@"default"];
-    if (countryMO.posterString) {
+    //[cell.imageView cancelImageDownloadTask];
+   // cell.imageView.image = [UIImage imageNamed:@"default"];
+    //if (countryMO.posterString) {
         [cell.imageView setImageWithURL:[NSURL URLWithString:countryMO.posterString]];
-    }
+   // }
     [_countryTableView reloadData];
 }
 
