@@ -48,10 +48,12 @@
     NSLog(@"%@", _selectedDate);
 }
 
-- (IBAction)selectDate:(id)sender {
-    //[self datePickerValueChanged:sender];
-    //DetailViewController *detail;
-    //detail.dateTravel = _selectedDate;
+- (IBAction)selectDate:(id)send {
+    DetailViewController *detail = [[DetailViewController alloc]init];
+    detail.dateTravel = (NSDate *)_selectedDate;
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"dd-mm-yyyy"];
+    _stringFromDate = [formatter stringFromDate:_selectedDate];
     [self actionDismissPopup];
 }
 - (IBAction)cancelDate:(id)sender {

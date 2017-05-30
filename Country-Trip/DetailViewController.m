@@ -2,7 +2,7 @@
 //  DetailViewController.m
 //  Country-Trip
 //
-//  Created by Zup Beta on 26/05/17.
+//  Created by Lorrayne Paraiso on 26/05/17.
 //  Copyright © 2017 DevTech. All rights reserved.
 //
 
@@ -15,26 +15,41 @@ static NSString *const kUrlImage = @"http://awseb-e-e-awsebloa-c5zq0lwotmwj-8324
 @property (strong, nonatomic) IBOutlet UILabel *longNameLabel;
 @property (strong, nonatomic) IBOutlet UILabel *callingCodeLabel;
 @property (strong, nonatomic) IBOutlet UILabel *dateVisitedLabel;
-
+@property (strong, nonatomic) DateVisitedViewController *popup;
 @end
 
 @implementation DetailViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    _popup = [DateVisitedViewController instantiateNewView];
+    _dateVisitedLabel.text = @"";
 }
 
 - (void) viewWillAppear:(BOOL)animated {
-    _longNameLabel.text = _countryDetail.longname;
-    NSString *callingCode = [@"Calling Code: " stringByAppendingString:_countryDetail.callingCode];
-    _callingCodeLabel.text = callingCode;
-    [_countryImageView cancelImageDownloadTask];
-    self.countryImageView.image = [UIImage imageNamed:@"default"];
-    if (_countryDetail.posterUrl) {
-        [_countryImageView setImageWithURL:_countryDetail.posterUrl];
+    [super viewWillAppear:YES];
+    if (_countryDetail) {
+        _longNameLabel.text = _countryDetail.longname;
+        NSString *callingCode = [@"Calling Code: " stringByAppendingString:_countryDetail.callingCode ?: @""];
+        _callingCodeLabel.text = callingCode;
+        [_countryImageView cancelImageDownloadTask];
+        self.countryImageView.image = [UIImage imageNamed:@"default"];
+        if (_countryDetail.posterUrl) {
+            [_countryImageView setImageWithURL:_countryDetail.posterUrl];
+        }
+    } else if (_countryData) {
+        _longNameLabel.text = _countryData.longname;
+        NSString *callingCode = [@"Calling Code: " stringByAppendingString:_countryData.callingCode ?: @""];
+        _callingCodeLabel.text = callingCode;
+        [_countryImageView cancelImageDownloadTask];
+        self.countryImageView.image = [UIImage imageNamed:@"default"];
+        _countryData.posterUrl = [NSURL URLWithString:_countryData.posterString];
+        if (_countryData.posterUrl) {
+            [_countryImageView setImageWithURL:_countryData.posterUrl];
+        }
     }
-    _dateVisitedLabel.text = [NSString stringWithFormat:@"%@", _dateTravel];
+    
+
     
 }
 
@@ -50,8 +65,9 @@ static NSString *const kUrlImage = @"http://awseb-e-e-awsebloa-c5zq0lwotmwj-8324
     _countryData.shortname = _countryDetail.shortname;
     _countryData.longname = _countryDetail.longname;
     _countryData.callingCode = _countryDetail.callingCode;
-    NSLog(@"shortname: %@\nlongname: %@\n callingCode: %@\n\n", _countryData.shortname, _countryData.longname, _countryData.callingCode);
-    //_countryData.idCountry = _countryDetail.idCountry;
+    _countryDetail.posterString = [NSString stringWithFormat:@"%@", _countryDetail.posterUrl];
+    _countryData.posterString = _countryDetail.posterString;
+    //_countryData.posterUrl = _countryDetail.posterUrl;
     NSError *error = nil;
     [context save:&error];
     if (error) {
@@ -94,8 +110,8 @@ static NSString *const kUrlImage = @"http://awseb-e-e-awsebloa-c5zq0lwotmwj-8324
 }
 
 - (IBAction)editVisit:(id)sender {
-    DateVisitedViewController *popup = [DateVisitedViewController instantiateNewView];
-    [popup presentInRootViewControllerOfViewController:self completion:nil];
+    [self.popup presentInRootViewControllerOfViewController:self completion:nil];
+    _dateVisitedLabel.text = _popup.stringFromDate;
 }
 
 

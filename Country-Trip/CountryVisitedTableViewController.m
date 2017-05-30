@@ -24,16 +24,10 @@
     NSError *error = nil;
     NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Country"];
     self.countries = [context executeFetchRequest:fetchRequest error:&error];
-    
     if (!self.countries) {
         NSLog(@"Error fetching Country objects: %@\n%@", [error localizedDescription], [error userInfo]);
         abort();
     }
-}
-
-- (void) viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:YES];
-    [_countryTableView reloadData];
 }
 
 #pragma mark - Table view data source
@@ -49,7 +43,7 @@
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
     CountryMO *countryMO = self.countries [indexPath.row];
     //cell.detailTextLabel.text = countryMO.shortname;
-    cell.textLabel.text = countryMO.longname;
+    cell.textLabel.text = countryMO.shortname;
     //[cell.imageView cancelImageDownloadTask];
    // cell.imageView.image = [UIImage imageNamed:@"default"];
     //if (countryMO.posterString) {
@@ -76,7 +70,6 @@
 }
 
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"Segue para detalhes do filme salvo");
     DetailViewController *listDetailView = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"Details"];
     CountryMO *country = self.countries [indexPath.row];
     

@@ -153,6 +153,7 @@ static NSString *const kUrlImage = @"http://awseb-e-e-awsebloa-c5zq0lwotmwj-8324
     [cell.posterCollection cancelImageDownloadTask];
     cell.posterCollection.image = [UIImage imageNamed:@"default"];
     NSString *posterStringComplete = [NSString stringWithFormat:@"%@%@/flag", kUrlImage, country.idCountry];
+    _country.posterString = posterStringComplete;
     NSURL *posterUrlComplete = [NSURL URLWithString:posterStringComplete];
     country.posterUrl = posterUrlComplete;
     [cell.posterCollection setImageWithURL:posterUrlComplete];
@@ -160,7 +161,6 @@ static NSString *const kUrlImage = @"http://awseb-e-e-awsebloa-c5zq0lwotmwj-8324
 }
 
 - (void) collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@" segue para a tela de detalhes do filme");
     DetailViewController *countryDetailView = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"Details"];
     CountryPropertyObject *country = self.countryCollectionResults [indexPath.row];
     countryDetailView.countryDetail = country;

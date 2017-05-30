@@ -2,7 +2,7 @@
 //  DateVisitedViewController.h
 //  Country-Trip
 //
-//  Created by Zup Beta on 28/05/17.
+//  Created by Lorrayne Paraiso on 28/05/17.
 //  Copyright © 2017 DevTech. All rights reserved.
 //
 
@@ -19,4 +19,5 @@
 @interface DateVisitedViewController : BasePopupViewController
 +(instancetype) instantiateNewView;
 @property (weak, nonatomic) id<DateVisitedViewControllerDelegate> delegate;
+@property (strong, nonatomic) NSString *stringFromDate;
 @end
