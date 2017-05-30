@@ -44,10 +44,19 @@ static NSString *const kUrlImage = @"http://awseb-e-e-awsebloa-c5zq0lwotmwj-8324
 }
 
 - (void)saveCountryInCoreData {
+    AppDelegate *appDelegate = (AppDelegate *) UIApplication.sharedApplication.delegate;
+    NSManagedObjectContext *context = appDelegate.persistentContainer.viewContext;
+    _countryData = [NSEntityDescription insertNewObjectForEntityForName:@"Country" inManagedObjectContext:context];
     _countryData.shortname = _countryDetail.shortname;
     _countryData.longname = _countryDetail.longname;
     _countryData.callingCode = _countryDetail.callingCode;
-    _countryData.idCountry = _countryDetail.idCountry;
+    NSLog(@"shortname: %@\nlongname: %@\n callingCode: %@\n\n", _countryData.shortname, _countryData.longname, _countryData.callingCode);
+    //_countryData.idCountry = _countryDetail.idCountry;
+    NSError *error = nil;
+    [context save:&error];
+    if (error) {
+        NSLog(@"%@", error);
+    }
 }
 
 -(void)clearStackView {

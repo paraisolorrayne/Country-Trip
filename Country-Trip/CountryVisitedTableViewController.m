@@ -2,13 +2,13 @@
 //  CountryVisitedTableViewController.m
 //  Country-Trip
 //
-//  Created by Zup Beta on 28/05/17.
+//  Created by Lorrayne Paraiso on 28/05/17.
 //  Copyright © 2017 DevTech. All rights reserved.
 //
 
 #import "CountryVisitedTableViewController.h"
 
-@interface CountryVisitedTableViewController ()
+@interface CountryVisitedTableViewController () <UITableViewDelegate, UITableViewDataSource>
 @property (strong, nonatomic) NSArray <CountryMO *> *countries;
 @property (strong, nonatomic) IBOutlet UITableView *countryTableView;
 @property (strong, nonatomic) IBOutlet UILabel *textLabel;
@@ -29,12 +29,11 @@
         NSLog(@"Error fetching Country objects: %@\n%@", [error localizedDescription], [error userInfo]);
         abort();
     }
-    [self.countryTableView reloadData];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void) viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:YES];
+    [_countryTableView reloadData];
 }
 
 #pragma mark - Table view data source
@@ -54,9 +53,8 @@
     //[cell.imageView cancelImageDownloadTask];
    // cell.imageView.image = [UIImage imageNamed:@"default"];
     //if (countryMO.posterString) {
-        [cell.imageView setImageWithURL:[NSURL URLWithString:countryMO.posterString]];
+   //     [cell.imageView setImageWithURL:[NSURL URLWithString:countryMO.posterString]];
    // }
-    [_countryTableView reloadData];
 }
 
 // Override to support editing the table view.

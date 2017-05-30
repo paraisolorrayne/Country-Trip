@@ -2,33 +2,83 @@
 //  ProfileViewController.m
 //  Country-Trip
 //
-//  Created by Zup Beta on 27/05/17.
+//  Created by Lorrayne Paraiso on 27/05/17.
 //  Copyright © 2017 DevTech. All rights reserved.
 //
 
 #import "ProfileViewController.h"
 
 @interface ProfileViewController ()
+@property (strong, nonatomic) IBOutlet UIImageView *profilePicture;
+@property (strong, nonatomic) IBOutlet FBSDKLoginButton *loginButton;
 
+@property (weak, nonatomic) IBOutlet UILabel *lblLoginStatus;
+@property (weak, nonatomic) IBOutlet UILabel *lblUsername;
+@property (weak, nonatomic) IBOutlet UILabel *lblEmail;
+-(void)toggleHiddenState:(BOOL)shouldHide;
 @end
 
 @implementation ProfileViewController
 
+
+-(void)toggleHiddenState:(BOOL)shouldHide{
+    self.lblUsername.hidden = shouldHide;
+    self.lblEmail.hidden = shouldHide;
+    self.profilePicture.hidden = shouldHide;
+}
+
+- (void)profileUserInfo {
+    NSDictionary *data = @{ @"fields": @"id,name,email, picture"};
+    
+    if ([FBSDKAccessToken currentAccessToken]) {
+        FBSDKGraphRequest *request = [[FBSDKGraphRequest alloc]
+                                      initWithGraphPath:@"me"
+                                      parameters: data
+                                      HTTPMethod:@"GET"];
+        [request startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection,
+                                              id result,
+                                              NSError *error) {
+            if (!error){
+                NSDictionary *dictionary = (NSDictionary *)result;
+                NSDictionary *data = [(NSDictionary *)result objectForKey:@"picture"];
+                NSDictionary *pic = [(NSDictionary *)data objectForKey:@"data"];
+                NSDictionary *photo = (NSDictionary *)[pic objectForKey:@"url"];
+                NSString *url = [NSString stringWithFormat:@"%@", photo];
+                ;
+                NSString *userName = [dictionary objectForKey:@"name"];
+                _lblUsername.text = userName;
+                NSString *userEmail = [dictionary objectForKey:@"email"];
+                _lblEmail.text = userEmail;
+                _profilePicture.image = [UIImage imageNamed:@"user-default"];
+                [_profilePicture cancelImageDownloadTask];
+                if (!url) {
+                    
+                } else {
+                    NSURL *posterUrlComplete = [NSURL URLWithString:url];
+                    [_profilePicture setImageWithURL:posterUrlComplete];
+                }
+            }
+            else {
+                NSLog(@"result: %@",[error description]);
+            }}];
+    }
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    FBSDKLoginButton *loginButton = [[FBSDKLoginButton alloc] init];
-    loginButton.center = self.view.center;
-    [self.view addSubview:loginButton];
-    loginButton.readPermissions =
+    [self toggleHiddenState:NO];
+    self.lblLoginStatus.text = @"";
+    self.loginButton.readPermissions =
     @[@"public_profile", @"email", @"user_friends"];
-    // Do any additional setup after loading the view.
 }
 
+- (void) viewWillAppear:(BOOL)animated {
+    [self profileUserInfo];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 /*
