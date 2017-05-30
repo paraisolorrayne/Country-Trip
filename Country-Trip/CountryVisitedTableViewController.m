@@ -29,16 +29,11 @@
         NSLog(@"Error fetching Country objects: %@\n%@", [error localizedDescription], [error userInfo]);
         abort();
     }
-    [self.countryTableView reloadData];
 }
 
 - (void) viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:YES];
     [_countryTableView reloadData];
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Table view data source
@@ -60,7 +55,6 @@
     //if (countryMO.posterString) {
    //     [cell.imageView setImageWithURL:[NSURL URLWithString:countryMO.posterString]];
    // }
-    [_countryTableView reloadData];
 }
 
 // Override to support editing the table view.

@@ -2,7 +2,7 @@
 //  ProfileViewController.m
 //  Country-Trip
 //
-//  Created by Zup Beta on 27/05/17.
+//  Created by Lorrayne Paraiso on 27/05/17.
 //  Copyright © 2017 DevTech. All rights reserved.
 //
 
@@ -39,20 +39,24 @@
                                               id result,
                                               NSError *error) {
             if (!error){
-                NSLog(@"result: %@",result);
                 NSDictionary *dictionary = (NSDictionary *)result;
-                NSString *photoUrl = (NSString *)[dictionary objectForKey:@"picture"];
+                NSDictionary *data = [(NSDictionary *)result objectForKey:@"picture"];
+                NSDictionary *pic = [(NSDictionary *)data objectForKey:@"data"];
+                NSDictionary *photo = (NSDictionary *)[pic objectForKey:@"url"];
+                NSString *url = [NSString stringWithFormat:@"%@", photo];
                 ;
-               /*
+                NSString *userName = [dictionary objectForKey:@"name"];
+                _lblUsername.text = userName;
+                NSString *userEmail = [dictionary objectForKey:@"email"];
+                _lblEmail.text = userEmail;
                 _profilePicture.image = [UIImage imageNamed:@"user-default"];
                 [_profilePicture cancelImageDownloadTask];
-                if (!photoUrl) {
+                if (!url) {
                     
                 } else {
-                    NSURL *posterUrlComplete = [NSURL URLWithString:photoUrl];
+                    NSURL *posterUrlComplete = [NSURL URLWithString:url];
                     [_profilePicture setImageWithURL:posterUrlComplete];
                 }
-                */
             }
             else {
                 NSLog(@"result: %@",[error description]);
@@ -67,15 +71,14 @@
     self.lblLoginStatus.text = @"";
     self.loginButton.readPermissions =
     @[@"public_profile", @"email", @"user_friends"];
-    [self profileUserInfo];
-    
-    // Do any additional setup after loading the view.
 }
 
+- (void) viewWillAppear:(BOOL)animated {
+    [self profileUserInfo];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 /*
