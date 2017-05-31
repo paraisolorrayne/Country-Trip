@@ -28,6 +28,12 @@
         NSLog(@"Error fetching Country objects: %@\n%@", [error localizedDescription], [error userInfo]);
         abort();
     }
+
+}
+
+- (void) viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:YES];
+    [_countryTableView reloadData];
 }
 
 #pragma mark - Table view data source
