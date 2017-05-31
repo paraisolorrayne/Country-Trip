@@ -31,9 +31,14 @@
 
 - (void)profileUserInfo {
     NSDictionary *data = @{ @"fields": @"id,name,email, picture"};
+
     if ([FBSDKAccessToken currentAccessToken]) {
         _loading.hidden = NO;
         [_loading startAnimating];
+
+    
+    if ([FBSDKAccessToken currentAccessToken]) {
+
         FBSDKGraphRequest *request = [[FBSDKGraphRequest alloc]
                                       initWithGraphPath:@"me"
                                       parameters: data
@@ -60,24 +65,30 @@
                     NSURL *posterUrlComplete = [NSURL URLWithString:url];
                     [_profilePicture setImageWithURL:posterUrlComplete];
                 }
+
                 _loading.hidesWhenStopped = YES;
                 [_loading stopAnimating];
             }
             else {
                 NSLog(@"result: %@",[error description]);
             }}];
-        
     }
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+
     [self toggleHiddenState:NO];
     self.loginButton.readPermissions =
     @[@"public_profile", @"email", @"user_friends"];
     _lblUsername.text = @"";
     _lblEmail.text = @"";
+
+    [self toggleHiddenState:YES];
+    self.lblLoginStatus.text = @"";
+    self.loginButton.readPermissions =
+    @[@"public_profile", @"email", @"user_friends"];
 }
 
 - (void) viewWillAppear:(BOOL)animated {

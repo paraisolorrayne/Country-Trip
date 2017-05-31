@@ -67,6 +67,7 @@ static NSString *const kUrlImage = @"http://awseb-e-e-awsebloa-c5zq0lwotmwj-8324
     _countryData.longname = _countryDetail.longname;
     _countryData.callingCode = _countryDetail.callingCode;
     _countryData.posterString = [NSString stringWithFormat:@"%@", _countryDetail.posterUrl];
+    NSLog(@"shortname: %@\nlongname: %@\n callingCode: %@\n\n", _countryData.shortname, _countryData.longname, _countryData.callingCode);
     NSError *error = nil;
     [context save:&error];
     if (error) {
