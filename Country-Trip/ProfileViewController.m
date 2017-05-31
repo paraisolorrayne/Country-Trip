@@ -11,12 +11,9 @@
 @interface ProfileViewController ()
 @property (strong, nonatomic) IBOutlet UIImageView *profilePicture;
 @property (strong, nonatomic) IBOutlet FBSDKLoginButton *loginButton;
-
-@property (weak, nonatomic) IBOutlet UILabel *lblLoginStatus;
 @property (weak, nonatomic) IBOutlet UILabel *lblUsername;
 @property (weak, nonatomic) IBOutlet UILabel *lblEmail;
 @property (strong, nonatomic) IBOutlet UIActivityIndicatorView *loading;
-
 -(void)toggleHiddenState:(BOOL)shouldHide;
 @end
 
@@ -31,12 +28,9 @@
 
 - (void)profileUserInfo {
     NSDictionary *data = @{ @"fields": @"id,name,email, picture"};
-    
     if ([FBSDKAccessToken currentAccessToken]) {
         _loading.hidden = NO;
         [_loading startAnimating];
-        
-        
         if ([FBSDKAccessToken currentAccessToken]) {
             
             FBSDKGraphRequest *request = [[FBSDKGraphRequest alloc]
@@ -65,7 +59,6 @@
                         NSURL *posterUrlComplete = [NSURL URLWithString:url];
                         [_profilePicture setImageWithURL:posterUrlComplete];
                     }
-                    
                     _loading.hidesWhenStopped = YES;
                     [_loading stopAnimating];
                 }
@@ -79,22 +72,19 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    
     [self toggleHiddenState:NO];
     self.loginButton.readPermissions =
     @[@"public_profile", @"email", @"user_friends"];
     _lblUsername.text = @"";
     _lblEmail.text = @"";
-    
     [self toggleHiddenState:NO];
-    self.lblLoginStatus.text = @"";
     self.loginButton.readPermissions =
     @[@"public_profile", @"email", @"user_friends"];
+    [self profileUserInfo];
 }
 
 - (void) viewWillAppear:(BOOL)animated {
-    [self profileUserInfo];
+    
 }
 
 - (void)didReceiveMemoryWarning {

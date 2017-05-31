@@ -13,8 +13,6 @@ static NSString *const kUrlImage = @"http://awseb-e-e-awsebloa-c5zq0lwotmwj-8324
 @property (strong, nonatomic) IBOutlet UIActivityIndicatorView *loading;
 @property (strong, nonatomic) CountryPropertyObject *country;
 @property (strong, nonatomic) IBOutlet UICollectionView *countryCollectionView;
-@property (strong, nonatomic) IBOutlet UISearchBar *searchBar;
-@property (strong, nonatomic) IBOutlet UISegmentedControl *segmentedContinentControl;
 @property (strong, nonatomic) NSString *continentDescription;
 @property (strong, nonatomic) NSString *nameContinent;
 @end
