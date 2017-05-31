@@ -31,61 +31,63 @@
 
 - (void)profileUserInfo {
     NSDictionary *data = @{ @"fields": @"id,name,email, picture"};
-
+    
     if ([FBSDKAccessToken currentAccessToken]) {
         _loading.hidden = NO;
         [_loading startAnimating];
-
-    
-    if ([FBSDKAccessToken currentAccessToken]) {
-
-        FBSDKGraphRequest *request = [[FBSDKGraphRequest alloc]
-                                      initWithGraphPath:@"me"
-                                      parameters: data
-                                      HTTPMethod:@"GET"];
-        [request startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection,
-                                              id result,
-                                              NSError *error) {
-            if (!error){
-                NSDictionary *dictionary = (NSDictionary *)result;
-                NSDictionary *data = [(NSDictionary *)result objectForKey:@"picture"];
-                NSDictionary *pic = [(NSDictionary *)data objectForKey:@"data"];
-                NSDictionary *photo = (NSDictionary *)[pic objectForKey:@"url"];
-                NSString *url = [NSString stringWithFormat:@"%@", photo];
-                ;
-                NSString *userName = [dictionary objectForKey:@"name"];
-                _lblUsername.text = userName;
-                NSString *userEmail = [dictionary objectForKey:@"email"];
-                _lblEmail.text = userEmail;
-                _profilePicture.image = [UIImage imageNamed:@"user-default"];
-                [_profilePicture cancelImageDownloadTask];
-                if (!url) {
+        
+        
+        if ([FBSDKAccessToken currentAccessToken]) {
+            
+            FBSDKGraphRequest *request = [[FBSDKGraphRequest alloc]
+                                          initWithGraphPath:@"me"
+                                          parameters: data
+                                          HTTPMethod:@"GET"];
+            [request startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection,
+                                                  id result,
+                                                  NSError *error) {
+                if (!error){
+                    NSDictionary *dictionary = (NSDictionary *)result;
+                    NSDictionary *data = [(NSDictionary *)result objectForKey:@"picture"];
+                    NSDictionary *pic = [(NSDictionary *)data objectForKey:@"data"];
+                    NSDictionary *photo = (NSDictionary *)[pic objectForKey:@"url"];
+                    NSString *url = [NSString stringWithFormat:@"%@", photo];
+                    ;
+                    NSString *userName = [dictionary objectForKey:@"name"];
+                    _lblUsername.text = userName;
+                    NSString *userEmail = [dictionary objectForKey:@"email"];
+                    _lblEmail.text = userEmail;
+                    _profilePicture.image = [UIImage imageNamed:@"user-default"];
+                    [_profilePicture cancelImageDownloadTask];
+                    if (!url) {
+                        
+                    } else {
+                        NSURL *posterUrlComplete = [NSURL URLWithString:url];
+                        [_profilePicture setImageWithURL:posterUrlComplete];
+                    }
                     
-                } else {
-                    NSURL *posterUrlComplete = [NSURL URLWithString:url];
-                    [_profilePicture setImageWithURL:posterUrlComplete];
+                    _loading.hidesWhenStopped = YES;
+                    [_loading stopAnimating];
                 }
-
-                _loading.hidesWhenStopped = YES;
-                [_loading stopAnimating];
-            }
-            else {
-                NSLog(@"result: %@",[error description]);
-            }}];
+                else {
+                    NSLog(@"result: %@",[error description]);
+                }}];
+        }
     }
+    
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-
+    
     [self toggleHiddenState:NO];
     self.loginButton.readPermissions =
     @[@"public_profile", @"email", @"user_friends"];
     _lblUsername.text = @"";
     _lblEmail.text = @"";
-
-    [self toggleHiddenState:YES];
+    
+    [self toggleHiddenState:NO];
     self.lblLoginStatus.text = @"";
     self.loginButton.readPermissions =
     @[@"public_profile", @"email", @"user_friends"];
