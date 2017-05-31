@@ -17,4 +17,5 @@
 @property (strong, nonatomic) CountryPropertyObject *countryDetail;
 @property (strong, nonatomic) CountryMO *countryData;
 @property (strong, nonatomic) NSDate *dateTravel;
+@property (strong, nonatomic) NSString *stringFromDateDetail;
 @end

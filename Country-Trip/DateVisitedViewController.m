@@ -53,6 +53,7 @@
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"dd-mm-yyyy"];
     _stringFromDate = [formatter stringFromDate:_selectedDate];
+    detail.stringFromDateDetail = _stringFromDate;
     [self actionDismissPopup];
 }
 - (IBAction)cancelDate:(id)sender {

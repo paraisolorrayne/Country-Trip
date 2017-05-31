@@ -25,7 +25,8 @@ static NSString *const kUrlImage = @"http://awseb-e-e-awsebloa-c5zq0lwotmwj-8324
 - (void)viewDidLoad {
     [super viewDidLoad];
     _popup = [DateVisitedViewController instantiateNewView];
-    _dateVisitedLabel.text = @"";
+    
+    _dateVisitedLabel.text = _stringFromDateDetail;
 }
 
 - (void) viewWillAppear:(BOOL)animated {
