@@ -77,6 +77,12 @@
     [self.navigationController pushViewController:listDetailView animated:YES];
 }
 
+- (IBAction)doRefresh:(id)sender {
+    [_countryTableView reloadData];
+    [sender endRefreshing];
+}
+
+
 /*
 #pragma mark - Navigation
 

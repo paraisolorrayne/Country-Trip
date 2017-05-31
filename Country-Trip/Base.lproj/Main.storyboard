@@ -44,6 +44,12 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="h4r-I0-uE3"/>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="hI7-Eg-JLJ">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <connections>
+                            <action selector="doRefresh:" destination="5ER-YQ-ynJ" eventType="valueChanged" id="vqq-Kc-J1x"/>
+                        </connections>
+                    </refreshControl>
                     <connections>
                         <outlet property="countryTableView" destination="u4i-rC-7Wx" id="uw9-ZQ-2he"/>
                     </connections>

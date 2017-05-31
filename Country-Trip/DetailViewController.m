@@ -43,14 +43,12 @@ static NSString *const kUrlImage = @"http://awseb-e-e-awsebloa-c5zq0lwotmwj-8324
         _callingCodeLabel.text = callingCode;
         [_countryImageView cancelImageDownloadTask];
         self.countryImageView.image = [UIImage imageNamed:@"default"];
-        _countryData.posterUrl = [NSURL URLWithString:_countryData.posterString];
-        if (_countryData.posterUrl) {
-            [_countryImageView setImageWithURL:_countryData.posterUrl];
+        NSURL *posterUrl;
+        posterUrl = [NSURL URLWithString:_countryData.posterString];
+        if (posterUrl) {
+            [_countryImageView setImageWithURL:posterUrl];
         }
     }
-    
-
-    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -65,9 +63,7 @@ static NSString *const kUrlImage = @"http://awseb-e-e-awsebloa-c5zq0lwotmwj-8324
     _countryData.shortname = _countryDetail.shortname;
     _countryData.longname = _countryDetail.longname;
     _countryData.callingCode = _countryDetail.callingCode;
-    _countryDetail.posterString = [NSString stringWithFormat:@"%@", _countryDetail.posterUrl];
-    _countryData.posterString = _countryDetail.posterString;
-    //_countryData.posterUrl = _countryDetail.posterUrl;
+    _countryData.posterString = [NSString stringWithFormat:@"%@", _countryDetail.posterUrl];
     NSError *error = nil;
     [context save:&error];
     if (error) {

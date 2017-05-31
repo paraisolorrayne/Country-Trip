@@ -5,10 +5,9 @@
         <attribute name="idCountry" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="longname" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="posterString" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="posterUrl" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="shortname" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Country" positionX="-63" positionY="-18" width="128" height="135"/>
+        <element name="Country" positionX="-63" positionY="-18" width="128" height="120"/>
     </elements>
 </model>

@@ -22,7 +22,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Country-Trip/DetailViewController.m"
@@ -35,52 +35,36 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "-[DetailViewController viewWillAppear:]"
                   moduleName = "Country-Trip"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/zupbeta/Documents/teste-ios/Country-Trip/Country-Trip/DetailViewController.m"
-                  timestampString = "517861103.889891"
+                  timestampString = "517929845.999299"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "40"
                   endingLineNumber = "40"
-                  offsetFromSymbolStart = "820">
+                  offsetFromSymbolStart = "816">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "-[DetailViewController viewWillAppear:]"
                   moduleName = "Country-Trip"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/zupbeta/Documents/teste-ios/Country-Trip/Country-Trip/DetailViewController.m"
-                  timestampString = "517861103.891502"
+                  timestampString = "517929846.000941"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "40"
                   endingLineNumber = "40"
-                  offsetFromSymbolStart = "832">
+                  offsetFromSymbolStart = "828">
                </Location>
             </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Country-Trip/DetailViewController.m"
-            timestampString = "517861022.495388"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
-            landmarkName = "-viewDidLoad"
-            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
