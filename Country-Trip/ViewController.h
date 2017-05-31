@@ -13,12 +13,10 @@
 #import "CountryMO.h"
 #import "CountryCollectionViewCell.h"
 #import "DetailViewController.h"
-#import "ContinentPopupViewController.h"
 
 
 
 @interface ViewController : UIViewController
 @property (strong, nonatomic) NSArray <CountryPropertyObject *> *countryCollectionResults;
-@property (strong, nonatomic) ContinentPopupViewController *popup;
 @end
 

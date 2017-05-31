@@ -28,8 +28,6 @@
 		4157BD641ED89AF600443434 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4157BD631ED89AF600443434 /* DetailViewController.m */; };
 		417EDF3F1EDA630F00EB170C /* BasePopupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 417EDF3E1EDA630F00EB170C /* BasePopupViewController.m */; };
 		417EDF421EDA640000EB170C /* RoundedButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 417EDF411EDA640000EB170C /* RoundedButton.m */; };
-		417EDF451EDA6A6100EB170C /* ContinentPopupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 417EDF441EDA6A6100EB170C /* ContinentPopupViewController.m */; };
-		417EDF471EDA6AAE00EB170C /* Continent.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 417EDF461EDA6AAE00EB170C /* Continent.storyboard */; };
 		41FD7EC11ED9BA030049FD81 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41FD7EC01ED9BA030049FD81 /* ProfileViewController.m */; };
 		C49A0358D3C88BC5C00B5B03 /* libPods-Country-TripTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AFF25CEC7F0C38E2566B653 /* libPods-Country-TripTests.a */; };
 /* End PBXBuildFile section */
@@ -91,9 +89,6 @@
 		417EDF3E1EDA630F00EB170C /* BasePopupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasePopupViewController.m; sourceTree = "<group>"; };
 		417EDF401EDA640000EB170C /* RoundedButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoundedButton.h; sourceTree = "<group>"; };
 		417EDF411EDA640000EB170C /* RoundedButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoundedButton.m; sourceTree = "<group>"; };
-		417EDF431EDA6A6100EB170C /* ContinentPopupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContinentPopupViewController.h; sourceTree = "<group>"; };
-		417EDF441EDA6A6100EB170C /* ContinentPopupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContinentPopupViewController.m; sourceTree = "<group>"; };
-		417EDF461EDA6AAE00EB170C /* Continent.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Continent.storyboard; sourceTree = "<group>"; };
 		41FD7EBF1ED9BA030049FD81 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
 		41FD7EC01ED9BA030049FD81 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		73BFD5D2C9FE70E3D366C834 /* libPods-Country-TripUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Country-TripUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -171,8 +166,6 @@
 				4157BD301ED730D400443434 /* Info.plist */,
 				4157BD281ED730D400443434 /* Country_Trip.xcdatamodeld */,
 				4157BD1C1ED730D400443434 /* Supporting Files */,
-				41FD7EBF1ED9BA030049FD81 /* ProfileViewController.h */,
-				41FD7EC01ED9BA030049FD81 /* ProfileViewController.m */,
 			);
 			path = "Country-Trip";
 			sourceTree = "<group>";
@@ -230,14 +223,13 @@
 				4157BD601ED7777C00443434 /* CountryCollectionViewCell.m */,
 				4157BD621ED89AF600443434 /* DetailViewController.h */,
 				4157BD631ED89AF600443434 /* DetailViewController.m */,
-				417EDF431EDA6A6100EB170C /* ContinentPopupViewController.h */,
-				417EDF441EDA6A6100EB170C /* ContinentPopupViewController.m */,
-				417EDF461EDA6AAE00EB170C /* Continent.storyboard */,
 				414928031EDB360B00F6558E /* CountryVisitedTableViewController.h */,
 				414928041EDB360B00F6558E /* CountryVisitedTableViewController.m */,
 				414928061EDB3E0900F6558E /* Date.storyboard */,
 				414928081EDB3E5500F6558E /* DateVisitedViewController.h */,
 				414928091EDB3E5500F6558E /* DateVisitedViewController.m */,
+				41FD7EBF1ED9BA030049FD81 /* ProfileViewController.h */,
+				41FD7EC01ED9BA030049FD81 /* ProfileViewController.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -403,7 +395,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4157BD2F1ED730D400443434 /* LaunchScreen.storyboard in Resources */,
-				417EDF471EDA6AAE00EB170C /* Continent.storyboard in Resources */,
 				4157BD2C1ED730D400443434 /* Assets.xcassets in Resources */,
 				414928071EDB3E0900F6558E /* Date.storyboard in Resources */,
 				4157BD271ED730D400443434 /* Main.storyboard in Resources */,
@@ -576,7 +567,6 @@
 				41FD7EC11ED9BA030049FD81 /* ProfileViewController.m in Sources */,
 				414928051EDB360B00F6558E /* CountryVisitedTableViewController.m in Sources */,
 				417EDF3F1EDA630F00EB170C /* BasePopupViewController.m in Sources */,
-				417EDF451EDA6A6100EB170C /* ContinentPopupViewController.m in Sources */,
 				4157BD5B1ED7397B00443434 /* CountryPropertyObject.m in Sources */,
 				4157BD211ED730D400443434 /* AppDelegate.m in Sources */,
 				4157BD5E1ED739BE00443434 /* CountryMO.m in Sources */,

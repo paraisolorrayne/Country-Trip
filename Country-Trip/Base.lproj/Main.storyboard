@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Country Visited Table View Controller-->
+        <!--Countries Visited-->
         <scene sceneID="Y60-KO-THY">
             <objects>
                 <tableViewController storyboardIdentifier="ListTable" id="5ER-YQ-ynJ" customClass="CountryVisitedTableViewController" sceneMemberID="viewController">
@@ -43,7 +43,7 @@
                             <outlet property="delegate" destination="5ER-YQ-ynJ" id="1Is-PT-383"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="h4r-I0-uE3"/>
+                    <navigationItem key="navigationItem" title="Countries Visited" id="h4r-I0-uE3"/>
                     <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="hI7-Eg-JLJ">
                         <autoresizingMask key="autoresizingMask"/>
                         <connections>
@@ -71,7 +71,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" indicatorStyle="black" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="vwV-26-ikM">
-                                <rect key="frame" x="2" y="138" width="316" height="293"/>
+                                <rect key="frame" x="2" y="64" width="316" height="367"/>
                                 <color key="backgroundColor" red="1" green="1" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="6" minimumInteritemSpacing="0.0" id="DcO-Me-7kT">
                                     <size key="itemSize" width="150" height="175"/>
@@ -80,7 +80,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <activityIndicatorView key="backgroundView" opaque="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" id="tut-j9-176">
-                                    <rect key="frame" x="0.0" y="-64" width="316" height="293"/>
+                                    <rect key="frame" x="0.0" y="-64" width="316" height="367"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <gestureRecognizers/>
                                     <color key="color" cocoaTouchSystemColor="darkTextColor"/>
@@ -136,62 +136,27 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="ZZd-py-pfO"/>
                                 </connections>
                             </collectionView>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="YqB-cf-Q3I">
-                                <rect key="frame" x="0.0" y="64" width="320" height="29"/>
-                                <segments>
-                                    <segment title="Asia"/>
-                                    <segment title="Africa"/>
-                                    <segment title="America"/>
-                                    <segment title="Europa"/>
-                                    <segment title="Oceania"/>
-                                </segments>
-                                <color key="tintColor" red="1" green="0.59999999999999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <connections>
-                                    <action selector="selectSegment:" destination="BYZ-38-t0r" eventType="valueChanged" id="A12-Fj-FfW"/>
-                                </connections>
-                            </segmentedControl>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="U41-DY-joM">
-                                <rect key="frame" x="0.0" y="94" width="320" height="44"/>
-                                <color key="backgroundColor" red="1" green="1" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="barTintColor" red="1" green="0.59999999999999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <textInputTraits key="textInputTraits" keyboardAppearance="light" returnKeyType="search" enablesReturnKeyAutomatically="YES"/>
-                                <scopeButtonTitles>
-                                    <string>Title</string>
-                                    <string>Title</string>
-                                </scopeButtonTitles>
-                                <connections>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="QaR-bV-MId"/>
-                                </connections>
-                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="U41-DY-joM" secondAttribute="trailing" id="11J-sY-FXn"/>
-                            <constraint firstItem="YqB-cf-Q3I" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="BoU-8N-29W"/>
-                            <constraint firstItem="vwV-26-ikM" firstAttribute="top" secondItem="U41-DY-joM" secondAttribute="bottom" id="CPZ-5c-QtR"/>
                             <constraint firstItem="vwV-26-ikM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="2" id="IWd-O9-cZz"/>
-                            <constraint firstAttribute="trailing" secondItem="YqB-cf-Q3I" secondAttribute="trailing" id="Kvb-m3-zJu"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="vwV-26-ikM" secondAttribute="bottom" id="RQZ-oe-bfg"/>
-                            <constraint firstItem="U41-DY-joM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="XTt-55-Rwx"/>
                             <constraint firstAttribute="trailing" secondItem="vwV-26-ikM" secondAttribute="trailing" constant="2" id="beS-j3-bms"/>
-                            <constraint firstItem="YqB-cf-Q3I" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="dls-zS-C08"/>
-                            <constraint firstItem="U41-DY-joM" firstAttribute="top" secondItem="YqB-cf-Q3I" secondAttribute="bottom" constant="2" id="yde-I3-qvV"/>
+                            <constraint firstItem="vwV-26-ikM" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="ew2-xk-SzH"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Country Trip" id="uxm-Up-YOt"/>
                     <connections>
                         <outlet property="countryCollectionView" destination="vwV-26-ikM" id="uon-gR-x3c"/>
                         <outlet property="loading" destination="tut-j9-176" id="qYB-eB-JQz"/>
-                        <outlet property="searchBar" destination="U41-DY-joM" id="9b0-Nx-Ulx"/>
-                        <outlet property="segmentedContinentControl" destination="YqB-cf-Q3I" id="lHZ-2l-MYp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1989.375" y="-560"/>
         </scene>
-        <!--Profile View Controller-->
+        <!--Facebook Profile-->
         <scene sceneID="evn-PQ-nzM">
             <objects>
                 <viewController id="Tkf-XQ-WY3" customClass="ProfileViewController" sceneMemberID="viewController">
@@ -253,7 +218,7 @@
                             <constraint firstItem="cEJ-zx-CDs" firstAttribute="centerX" secondItem="uim-hQ-f3G" secondAttribute="centerX" id="tGK-Pn-X03"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="AFO-ZR-jFy"/>
+                    <navigationItem key="navigationItem" title="Facebook Profile" id="AFO-ZR-jFy"/>
                     <connections>
                         <outlet property="lblEmail" destination="VRq-j9-Wdq" id="CeY-Dk-oe8"/>
                         <outlet property="lblUsername" destination="rjM-DM-KlG" id="ZTf-R1-Sik"/>
@@ -367,6 +332,7 @@
                         <outlet property="callingCodeLabel" destination="XQi-ub-FWU" id="vVi-Yy-wu0"/>
                         <outlet property="countryImageView" destination="fHL-hg-bO7" id="Oo2-2k-4Hm"/>
                         <outlet property="dateVisitedLabel" destination="7z2-9I-88w" id="Jbi-KP-alN"/>
+                        <outlet property="favoriteButton" destination="Y0v-S5-VNC" id="bcg-8n-tx3"/>
                         <outlet property="longNameLabel" destination="Mkr-8K-Nmv" id="ZQ9-er-tD6"/>
                     </connections>
                 </viewController>

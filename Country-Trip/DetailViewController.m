@@ -15,6 +15,8 @@ static NSString *const kUrlImage = @"http://awseb-e-e-awsebloa-c5zq0lwotmwj-8324
 @property (strong, nonatomic) IBOutlet UILabel *longNameLabel;
 @property (strong, nonatomic) IBOutlet UILabel *callingCodeLabel;
 @property (strong, nonatomic) IBOutlet UILabel *dateVisitedLabel;
+@property (strong, nonatomic) IBOutlet UIButton *favoriteButton;
+
 @property (strong, nonatomic) DateVisitedViewController *popup;
 @end
 
@@ -38,6 +40,7 @@ static NSString *const kUrlImage = @"http://awseb-e-e-awsebloa-c5zq0lwotmwj-8324
             [_countryImageView setImageWithURL:_countryDetail.posterUrl];
         }
     } else if (_countryData) {
+        _favoriteButton.hidden = YES;
         _longNameLabel.text = _countryData.longname;
         NSString *callingCode = [@"Calling Code: " stringByAppendingString:_countryData.callingCode ?: @""];
         _callingCodeLabel.text = callingCode;
@@ -120,5 +123,7 @@ static NSString *const kUrlImage = @"http://awseb-e-e-awsebloa-c5zq0lwotmwj-8324
  // Pass the selected object to the new view controller.
  }
  */
+
+
 
 @end

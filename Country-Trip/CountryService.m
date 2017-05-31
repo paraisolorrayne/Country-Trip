@@ -39,7 +39,6 @@ static NSString *const kUrlBase = @"http://awseb-e-e-awsebloa-c5zq0lwotmwj-83247
         NSMutableArray *countries;
         if ([response isKindOfClass:[NSArray class]]) {
             NSArray *responseArray = response;
-            NSLog(@"%@", responseArray);
             countries = [NSMutableArray arrayWithCapacity:responseArray.count];
             for (NSDictionary *json in responseArray) {
                 CountryPropertyObject *country = [[CountryPropertyObject alloc] initWithData:json];

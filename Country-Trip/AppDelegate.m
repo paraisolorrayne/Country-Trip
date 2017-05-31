@@ -2,7 +2,7 @@
 //  AppDelegate.m
 //  Country-Trip
 //
-//  Created by Zup Beta on 25/05/17.
+//  Created by Lorrayne Paraiso on 25/05/17.
 //  Copyright © 2017 DevTech. All rights reserved.
 //
 

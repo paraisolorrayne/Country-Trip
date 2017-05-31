@@ -45,7 +45,6 @@
 
 -(IBAction)datePickerValueChanged: (id)sender {
     _selectedDate = [sender date];
-    NSLog(@"%@", _selectedDate);
 }
 
 - (IBAction)selectDate:(id)send {
@@ -59,6 +58,7 @@
 - (IBAction)cancelDate:(id)sender {
     [self actionDismissPopup];
 }
+
 
 
 /*
